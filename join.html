@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Us – Sustainable Palm Oil Cooperative</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+    <header>
+        <h1>Sustainable Palm Oil Cooperative</h1>
+        <nav>
+            <button class="menu-button">
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                    <path fill="white" d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/>
+                </svg>
+            </button>
+            <div class="dropdown">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="membership.html">Membership Benefits</a>
+                <a href="programmes.html">Our Programmes</a> <!-- British spelling -->
+                <a href="join.html">Join Us</a>
+            </div>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Join the Cooperative</h2>
+        <p>Ready to join? Meet our criteria and become a part of a cooperative that values sustainability, fair pricing, and economic growth.</p>
+        <p><strong>Note:</strong> Please fill out as many fields as possible. Fields marked with an asterisk (*) are required.</p>
+
+        <form action="/submit" method="post">
+            <label for="name">* Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="phone">* Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="email">* Email Address:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="address">* Residential Address:</label>
+            <input type="text" id="address" name="address" required>
+
+            <label for="farmer_id">* Unique Farmer ID:</label>
+            <input type="text" id="farmer_id" name="farmer_id" required>
+
+            <label for="farm_address">* Farm Address:</label>
+            <input type="text" id="farm_address" name="farm_address" required>
+
+            <label for="coordinates">Farm Coordinates (Latitude, Longitude):</label>
+            <input type="text" id="coordinates" name="coordinates" placeholder="e.g., -1.234, 116.567">
+
+            <label for="farm_size">Farm Size (in hectares):</label>
+            <input type="number" id="farm_size" name="farm_size" step="0.01">
+
+            <label for="farm_type">* Type of Farm:</label>
+            <select id="farm_type" name="farm_type" required>
+                <option value="independent">Independent Farmer</option>
+                <option value="estate">Estate</option>
+                <option value="agent">Agent</option>
+            </select>
+
+            <label for="palm_variety">Palm Variety:</label>
+            <input type="text" id="palm_variety" name="palm_variety">
+
+            <label for="certification">Certification Status:</label>
+            <select id="certification" name="certification">
+                <option value="none">None</option>
+                <option value="rspo">RSPO</option>
+                <option value="ispo">ISPO</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="production_volume">Estimated Production Volume (kg/month):</label>
+            <input type="number" id="production_volume" name="production_volume">
+
+            <label for="years_of_operation">Years of Operation:</label>
+            <input type="number" id="years_of_operation" name="years_of_operation">
+
+            <button type="submit">Submit Application</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Sustainable Palm Oil Cooperative. All rights reserved.</p>
+    </footer><script>
+      window.ChatraSetup = {
+          colors: {
+              buttonText: '#f0f0f0', /* chat button text color */
+              buttonBg: '#228b22'    /* chat button background color */
+          }
+      };
+      </script>
+    <!-- Chatra Chatbot Code -->
+    <script>
+        (function(d, w, c) {
+            w.ChatraID = 'A6EmiTr69DmntesTK';
+            var s = d.createElement('script');
+            w[c] = w[c] || function() {
+                (w[c].q = w[c].q || []).push(arguments);
+            };
+            s.async = true;
+            s.src = 'https://call.chatra.io/chatra.js';
+            if (d.head) d.head.appendChild(s);
+        })(document, window, 'Chatra');
+    </script>
+    <!-- End Chatra Code -->
+</body>
+</html>
