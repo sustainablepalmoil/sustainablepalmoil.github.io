@@ -1,14 +1,10 @@
-/* Set full height and width for the HTML and body */
-html {
+/* General styling for body and html */
+html, body {
   height: 100%;
   width: 100%;
-}
-
-/* General body styling */
-body {
-  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  font-family: Arial, sans-serif;
   background-color: #f4f4f4;
 }
 
@@ -17,186 +13,77 @@ header {
   background-color: #228B22; /* Forest Green */
   color: white;
   padding: 10px 20px;
+  position: relative;
+  z-index: 200; /* Keep header above other elements */
 }
 
 /* Header container layout */
 .header-container {
   display: flex;
-  align-items: center; /* Vertically align items */
-  justify-content: space-between; /* Space out the logo and menu button */
-  padding: 0 20px; /* Add padding around the header */
-  width: 100%; /* Ensure the container spans the full width */
-  box-sizing: border-box; /* Include padding in width calculations */
+  align-items: center;
+  justify-content: space-between; /* Space out logo and menu button */
 }
 
-/* Logo styles */
+/* Logo styling */
 .logo {
-  max-width: 150px; /* Adjust size of the logo */
-  height: auto; /* Maintain aspect ratio */
-  flex-shrink: 0; /* Prevent the logo from shrinking */
-}
-
-/* Header content (title and nav) */
-.header-content {
-  flex-grow: 1; /* Ensures the title and nav occupy remaining space */
-}
-
-header h1 {
-  margin: 0; /* Remove default margin */
-  font-size: 1.8rem; /* Adjust title size */
+  max-width: 150px; /* Adjust logo size */
+  height: auto;
 }
 
 /* Menu button styling (aligned to the right) */
 .menu-button {
-  background-color: #228B22; /* Forest Green */
-  color: white;
-  padding: 10px;
+  background-color: #228B22;
   border: none;
+  color: white;
   border-radius: 5px;
-  font-size: 1em;
+  padding: 10px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: auto; /* Pushes the menu button to the far right */
-  z-index: 200; /* Ensure the menu button stays on top */
 }
+
 .menu-button svg {
-  fill: white; /* Set icon colour */
-  width: 24px; /* Icon size */
+  width: 24px;
   height: 24px;
 }
 
 .menu-button:hover {
-  background-color: #196619; /* Slightly darker Forest Green for hover effect */
+  background-color: #196619;
 }
 
-/* Dropdown navigation - full-page overlay */
+/* Dropdown navigation (full screen menu) */
 .dropdown {
   display: none; /* Hidden by default */
-  position: fixed; /* Position fixed to the viewport */
-  top: 0; /* Start from the top of the page */
-  left: 0; /* Start from the left of the page */
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  background-color: rgba(34, 139, 34, 0.95); /* Semi-transparent Forest Green */
-  z-index: 300; /* Ensure the dropdown is above other elements */
-  display: flex; /* Use flexbox for centring */
-  align-items: center; /* Vertically centre */
-  justify-content: center; /* Horizontally centre */
-  text-align: center; /* Align text to the centre */
-  padding: 20px; /* Add padding inside the dropdown */
-  box-sizing: border-box; /* Include padding in size */
+  position: fixed; /* Cover the entire screen */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(34, 139, 34, 0.95); /* Semi-transparent green */
+  z-index: 300; /* Above everything */
+  display: flex; /* Flexbox for centring content */
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; /* Stack links vertically */
 }
 
-/* Dropdown links styling */
+/* Dropdown link styling */
 .dropdown a {
-  display: block;
-  padding: 15px;
   color: white;
   text-decoration: none;
-  font-size: 1.5em; /* Increase font size for better readability */
+  font-size: 1.5em;
   font-weight: bold;
+  margin: 10px 0;
 }
 
 .dropdown a:hover {
-  background-color: #196619; /* Slightly darker green for hover effect */
+  background-color: #196619;
+  padding: 10px 20px;
+  border-radius: 5px;
 }
 
 /* Show dropdown when active */
 .dropdown.active {
-  display: flex; /* Make the dropdown visible and centred */
-}
-
-/* Section styling */
-section {
-  padding: 20px;
-  margin: 10px;
-  background-color: white;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Call-to-action button styling */
-.cta-button {
-  background-color: #228B22; /* Forest Green */
-  color: white;
-  padding: 15px 30px;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 5px;
-  display: inline-block;
-  margin-top: 20px;
-}
-
-.cta-button:hover {
-  background-color: #196619; /* Slightly darker Forest Green for hover effect */
-}
-
-/* Hero section styling */
-#hero {
-  text-align: center;
-  padding: 30px;
-  background-color: #f4f4f4;
-}
-
-#hero h1 {
-  font-size: 2em;
-  color: #228B22; /* Forest Green */
-  margin-bottom: 10px;
-}
-
-#hero h2, #hero h3 {
-  color: #333;
-}
-
-#hero p {
-  font-size: 1.1em;
-  color: #555;
-  margin: 15px 0;
-}
-
-/* Form styling for mobile stacking */
-form {
-  max-width: 500px; /* Limits the form width for better readability */
-  margin: 0 auto;
-  padding: 20px;
-}
-
-form label {
-  display: block;
-  margin-top: 15px;
-  font-weight: bold;
-}
-
-form input[type="text"],
-form input[type="tel"],
-form input[type="email"],
-form input[type="number"],
-form select {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  margin-bottom: 15px;
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-/* Submit button styling */
-form button[type="submit"] {
-  background-color: #228B22; /* Forest Green */
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-size: 1em;
-  cursor: pointer;
-  display: block;
-  margin-top: 20px;
-  width: 100%;
-}
-
-form button[type="submit"]:hover {
-  background-color: #196619; /* Slightly darker Forest Green for hover effect */
+  display: flex;
 }
