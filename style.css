@@ -49,7 +49,7 @@ header {
 }
 
 .menu-button:hover {
-  background-color: #196619;
+  background-color: #01A254;
 }
 
 /* Dropdown navigation */
@@ -124,7 +124,7 @@ section {
 
 #hero h1 {
   font-size: 2em;
-  color: #00BF63; /* Forest Green */
+  color: #01A254; /* Forest Green */
   margin-bottom: 10px;
 }
 
