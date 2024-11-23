@@ -98,13 +98,15 @@
             formData.forEach((value, key) => (data[key] = value));
 
             try {
-                const response = await fetch(`https://thingproxy.freeboard.io/fetch/https://script.google.com/macros/s/AKfycbziOYyssbjJnSv6t62xs1L6GDiqOqfK9dib5HK71sEv_1QT7OW0E8U-fP82abZTMoOblg/exec`, {
+                const sheet = atob('aHR0cHM6Ly9zY3JpcHQuZ29vZ2xlLmNvbS9tYWNyb3Mvcy9BS2Z5Y2J6aU9ZeXNzamJqSm5TdjZ0NjJ4czFKNkdEaXFPcWZLOWRpYjVISzcxc0V2XzFRVDdPVzBFOFUtZlA4MmFiWlRNb09ibGc=');
+                const response = await fetch(sheet, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify(data),
                 });
+
 
 
 
