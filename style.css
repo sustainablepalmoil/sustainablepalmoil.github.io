@@ -3,37 +3,8 @@ html {
   height: 100%;
   width: 100%;
 }
-.logo {
-    display: block; /* Ensure the logo is visible */
-    margin: 0 auto 10px auto; /* Centres the logo and adds spacing */
-    max-width: 200px; /* Adjust size to fit your design */
-    height: auto; /* Maintains the aspect ratio */
-}
-/* Align the header content */
-.header-container {
-    display: flex;
-    align-items: center; /* Vertically align logo and text */
-    justify-content: flex-start; /* Align content to the left */
-    padding: 10px; /* Add padding around the header */
-}
 
-/* Logo styles */
-.logo {
-    max-width: 150px; /* Adjust size of the logo */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 20px; /* Add space between logo and text */
-}
-
-/* Header content (title and nav) */
-.header-content {
-    flex-grow: 1; /* Ensures the navigation occupies the remaining space */
-}
-
-header h1 {
-    margin: 0; /* Remove default margin */
-    font-size: 1.8rem; /* Adjust title size */
-}
-
+/* General body styling */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -45,41 +16,34 @@ body {
 header {
   background-color: #228B22; /* Forest Green */
   color: white;
-  padding: 20px;
-  text-align: center;
+  padding: 10px 20px;
 }
 
-/* Section styling */
-section {
-  padding: 20px;
-  margin: 10px;
-  background-color: white;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+/* Header container layout */
+.header-container {
+  display: flex;
+  align-items: center; /* Vertically align items */
+  justify-content: space-between; /* Space out logo and menu button */
 }
 
-/* Call-to-action button styling */
-.cta-button {
-  background-color: #228B22; /* Forest Green */
-  color: white;
-  padding: 15px 30px;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 5px;
-  display: inline-block;
-  margin-top: 20px;
+/* Logo styles */
+.logo {
+  max-width: 150px; /* Adjust size of the logo */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 20px; /* Space between logo and content */
 }
 
-.cta-button:hover {
-  background-color: #196619; /* Slightly darker Forest Green for hover effect */
+/* Header content (title and nav) */
+.header-content {
+  flex-grow: 1; /* Ensures the title and nav occupy remaining space */
 }
 
-/* Navigation styling */
-nav {
-  text-align: center;
-  position: relative;
+header h1 {
+  margin: 0; /* Remove default margin */
+  font-size: 1.8rem; /* Adjust title size */
 }
 
+/* Menu button (positioned on the right) */
 .menu-button {
   background-color: #228B22; /* Forest Green */
   color: white;
@@ -100,9 +64,10 @@ nav {
 }
 
 .menu-button:hover {
-  background-color: #196619;
+  background-color: #196619; /* Slightly darker Forest Green for hover effect */
 }
 
+/* Dropdown navigation */
 .dropdown {
   display: none;
   position: absolute;
@@ -130,6 +95,31 @@ nav {
 /* Show dropdown on button hover */
 nav:hover .dropdown {
   display: block;
+}
+
+/* Section styling */
+section {
+  padding: 20px;
+  margin: 10px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Call-to-action button styling */
+.cta-button {
+  background-color: #228B22; /* Forest Green */
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.cta-button:hover {
+  background-color: #196619; /* Slightly darker Forest Green for hover effect */
 }
 
 /* Hero section styling */
@@ -172,7 +162,6 @@ form input[type="text"],
 form input[type="tel"],
 form input[type="email"],
 form input[type="number"],
-form input[type="text"],
 form select {
   width: 100%;
   padding: 10px;
