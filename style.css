@@ -24,16 +24,17 @@ header {
   display: flex;
   align-items: center; /* Vertically align items */
   justify-content: space-between; /* Space out the logo and menu button */
-  position: relative; /* Needed for dropdown positioning */
-  padding: 0 20px; /* Add some padding around the header content */
+  padding: 0 20px; /* Add padding around the header */
+  width: 100%; /* Ensure the container spans the full width */
+  box-sizing: border-box; /* Include padding in width calculations */
 }
 
 /* Logo styles */
 .logo {
   max-width: 150px; /* Adjust size of the logo */
   height: auto; /* Maintain aspect ratio */
+  flex-shrink: 0; /* Prevent the logo from shrinking */
 }
-
 /* Header content (title and nav) */
 .header-content {
   flex-grow: 1; /* Ensures the title and nav occupy remaining space */
@@ -44,7 +45,7 @@ header h1 {
   font-size: 1.8rem; /* Adjust title size */
 }
 
-/* Menu button (positioned on the right) */
+/* Menu button styling (aligned to the right) */
 .menu-button {
   background-color: #228B22; /* Forest Green */
   color: white;
@@ -57,9 +58,8 @@ header h1 {
   align-items: center;
   justify-content: center;
   margin-left: auto; /* Pushes the menu button to the far right */
-  z-index: 200; /* Ensure button is above other elements */
+  z-index: 200; /* Ensure the menu button stays on top */
 }
-
 .menu-button svg {
   fill: white; /* Set icon color */
   width: 24px; /* Icon size */
@@ -70,17 +70,21 @@ header h1 {
   background-color: #196619; /* Slightly darker Forest Green for hover effect */
 }
 
-/* Dropdown navigation */
+/* Fix for menu button's dropdown alignment */
 .dropdown {
+  position: absolute; /* Position relative to the menu button */
+  top: 100%; /* Place dropdown below the menu button */
+  right: 0; /* Align to the right edge of the menu button */
   display: none; /* Hidden by default */
-  position: absolute;
-  top: 100%; /* Position dropdown below the menu button */
-  right: 0; /* Align dropdown to the right */
   background-color: #228B22; /* Forest Green */
   border-radius: 5px;
   padding: 10px 0;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-  z-index: 100; /* Ensure dropdown is above other elements */
+}
+
+/* Show dropdown when active */
+.dropdown.active {
+  display: block;
 }
 
 /* Dropdown links styling */
