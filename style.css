@@ -3,7 +3,12 @@ html {
   height: 100%;
   width: 100%;
 }
-
+.logo {
+    display: block; /* Ensure the logo is visible */
+    margin: 0 auto 10px auto; /* Centres the logo and adds spacing */
+    max-width: 200px; /* Adjust size to fit your design */
+    height: auto; /* Maintains the aspect ratio */
+}
 body {
   font-family: Arial, sans-serif;
   margin: 0;
