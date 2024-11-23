@@ -1,21 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Select the menu button and dropdown
     const menuButton = document.querySelector('.menu-button');
     const dropdown = document.querySelector('.dropdown');
 
     if (menuButton && dropdown) {
-        // Add a click event listener to the menu button
+        // Toggle dropdown visibility
         menuButton.addEventListener('click', () => {
-            dropdown.classList.toggle('active'); // Toggle visibility of dropdown
+            dropdown.classList.toggle('active');
         });
 
-        // Close dropdown when clicking outside of it
+        // Close dropdown when clicking outside
         document.addEventListener('click', (event) => {
             if (!dropdown.contains(event.target) && !menuButton.contains(event.target)) {
-                dropdown.classList.remove('active'); // Hide the dropdown
+                dropdown.classList.remove('active');
             }
         });
-    } else {
-        console.warn('Menu button or dropdown not found in DOM.');
     }
 });
