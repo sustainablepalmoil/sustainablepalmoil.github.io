@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
       dropdown.classList.toggle('active');
     });
 
-    // Optional: Close dropdown when clicking outside
+    // Close dropdown when clicking outside
     document.addEventListener('click', (event) => {
       if (!dropdown.contains(event.target) && !menuButton.contains(event.target)) {
         dropdown.classList.remove('active');
