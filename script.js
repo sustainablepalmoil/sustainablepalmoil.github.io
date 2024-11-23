@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (menuButton && dropdown) {
     // Toggle dropdown visibility on button click
-    menuButton.addEventListener('click', () => {
+    menuButton.addEventListener('click', (event) => {
+      event.stopPropagation(); // Prevent event from bubbling up
       dropdown.classList.toggle('active');
     });
 
@@ -14,7 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
         dropdown.classList.remove('active');
       }
     });
-  } else {
-    console.error('Menu button or dropdown not found in the DOM.');
-  }
-});
+
+    // Close dropdown when the Escape key is pressed
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        dropdown.classList.remove('active');
+      }
+    });
+  } else 
