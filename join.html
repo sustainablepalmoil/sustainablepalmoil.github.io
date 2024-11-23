@@ -31,7 +31,7 @@
         <p>Ready to join? Meet our criteria and become a part of a cooperative that values sustainability, fair pricing, and economic growth.</p>
         <p><strong>Note:</strong> Please fill out as many fields as possible. Fields marked with an asterisk (*) are required.</p>
 
-        <form action="/submit" method="post">
+        <form id="join-form">
             <label for="name">* Full Name:</label>
             <input type="text" id="name" name="name" required>
 
@@ -86,27 +86,38 @@
 
     <footer>
         <p>&copy; 2024 Sustainable Palm Oil Cooperative. All rights reserved.</p>
-    </footer><script>
-      window.ChatraSetup = {
-          colors: {
-              buttonText: '#f0f0f0', /* chat button text color */
-              buttonBg: '#228b22'    /* chat button background color */
-          }
-      };
-      </script>
-    <!-- Chatra Chatbot Code -->
+    </footer>
+
     <script>
-        (function(d, w, c) {
-            w.ChatraID = 'A6EmiTr69DmntesTK';
-            var s = d.createElement('script');
-            w[c] = w[c] || function() {
-                (w[c].q = w[c].q || []).push(arguments);
-            };
-            s.async = true;
-            s.src = 'https://call.chatra.io/chatra.js';
-            if (d.head) d.head.appendChild(s);
-        })(document, window, 'Chatra');
+        document.getElementById('join-form').addEventListener('submit', async function (event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Gather form data
+            const formData = new FormData(event.target);
+            const data = {};
+            formData.forEach((value, key) => (data[key] = value));
+
+            try {
+                const response = await fetch('https://script.google.com/macros/s/AKfycbziOYyssbjJnSv6t62xs1L6GDiqOqfK9dib5HK71sEv_1QT7OW0E8U-fP82abZTMoOblg/exec', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                });
+
+                if (response.ok) {
+                    alert('Your application has been submitted successfully!');
+                    event.target.reset();
+                } else {
+                    alert('There was an error submitting your application. Please try again later.');
+                }
+            } catch (error) {
+                alert('There was an error submitting your application. Please try again later.');
+                console.error(error);
+            }
+        });
     </script>
-    <!-- End Chatra Code -->
+
 </body>
 </html>
