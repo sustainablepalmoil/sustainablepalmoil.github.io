@@ -182,3 +182,15 @@ form button[type="submit"] {
 form button[type="submit"]:hover {
   background-color: #196619; /* Slightly darker Forest Green for hover effect */
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dropdown {
+    width: 90%; /* Adjust dropdown width for smaller screens */
+    left: 5%; /* Centre dropdown on mobile devices */
+    right: unset;
+  }
+  .cta-button {
+    width: 100%;
+  }
+}
