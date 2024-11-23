@@ -97,7 +97,7 @@ header h1 {
 }
 
 /* Show dropdown when nav has active class (mobile/JS) */
-nav.active .dropdown {
+.dropdown.active {
   display: block;
 }
 
