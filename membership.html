@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Membership</title>
+    <title>Membership – Sustainable Palm Oil Cooperative</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
     <style>
         .logo {
@@ -21,7 +21,7 @@
 </head>
 <body>
 
-    <header>
+<header>
     <div class="header-container">
         <!-- Logo -->
         <img src="https://sustainablepalmoil.github.io/palm-eco-coop-logo.png" 
@@ -30,28 +30,28 @@
         
         <!-- Title and Navigation -->
         <div class="header-content">
-            <h1></h1>
+            <h1>Sustainable Palm Oil Cooperative</h1>
             <nav>
+                <!-- Menu Button -->
+                <button class="menu-button">
+                    <svg width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="white" d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/>
+                    </svg>
+                </button>
+                <!-- Dropdown Menu -->
                 <div class="dropdown">
                     <a href="index.html">Home</a>
                     <a href="about.html">About Us</a>
                     <a href="membership.html">Membership Benefits</a>
-                    <a href="programmes.html">Our Programmes</a> <!-- British spelling -->
+                    <a href="programmes.html">Our Programmes</a>
                     <a href="join.html">Join Us</a>
                 </div>
-            <nav>
-    <button class="menu-button">
-        <!-- SVG icon or text for the button -->
-    </button>
-    <div class="dropdown">
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="membership.html">Membership Benefits</a>
-        <a href="programmes.html">Our Programmes</a>
-        <a href="join.html">Join Us</a>
+            </nav>
+        </div>
     </div>
-</nav>
-    <section>
+</header>
+
+<section>
     <h2>Membership Benefits</h2>
     <h3>Enhanced Market Access</h3>
     <p>Gain access to lucrative EU markets through compliance with the EUDR and international sustainability standards.</p>
@@ -63,33 +63,48 @@
         <li><strong>Capital Expenditure Program:</strong> Eligible after nine months for machinery and productivity investments.</li>
     </ul>
     <h3>Knowledge Sharing & Support</h3>
-    <p>We provide guidance on business operations, productivity, and sustainable practices to all our members.</p></section>
+    <p>We provide guidance on business operations, productivity, and sustainable practices to all our members.</p>
+</section>
 
-    <footer>
-        <p>&copy; 2024 Sustainable Palm Oil Cooperative. All rights reserved.</p>
-    </footer>
+<footer>
+    <p>&copy; 2024 Sustainable Palm Oil Cooperative. All rights reserved.</p>
+</footer>
 
-    <script>
-      window.ChatraSetup = {
-          colors: {
-              buttonText: '#f0f0f0', /* chat button text color */
-              buttonBg: '#228b22'    /* chat button background color */
-          }
-      };
-    </script>
-    <!-- Chatra Chatbot Code -->
-    <script>
-        (function(d, w, c) {
-            w.ChatraID = 'A6EmiTr69DmntesTK';
-            var s = d.createElement('script');
-            w[c] = w[c] || function() {
-                (w[c].q = w[c].q || []).push(arguments);
-            };
-            s.async = true;
-            s.src = 'https://call.chatra.io/chatra.js';
-            if (d.head) d.head.appendChild(s);
-        })(document, window, 'Chatra');
-    </script>
-    <!-- End Chatra Code -->
+<!-- Chatra Chatbox Custom Colors -->
+<script>
+    window.ChatraSetup = {
+        colors: {
+            buttonText: '#f0f0f0', /* Chat button text colour */
+            buttonBg: '#228b22'    /* Chat button background colour */
+        }
+    };
+</script>
+
+<!-- Chatra Chatbox Code -->
+<script>
+    (function(d, w, c) {
+        w.ChatraID = 'A6EmiTr69DmntesTK';
+        var s = d.createElement('script');
+        w[c] = w[c] || function() {
+            (w[c].q = w[c].q || []).push(arguments);
+        };
+        s.async = true;
+        s.src = 'https://call.chatra.io/chatra.js';
+        if (d.head) d.head.appendChild(s);
+    })(document, window, 'Chatra');
+</script>
+
+<!-- Add JavaScript for Dropdown -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuButton = document.querySelector('.menu-button');
+        const dropdown = document.querySelector('.dropdown');
+
+        menuButton.addEventListener('click', () => {
+            dropdown.classList.toggle('active');
+        });
+    });
+</script>
+
 </body>
 </html>
