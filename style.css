@@ -109,6 +109,9 @@ section {
   border-radius: 5px;
   display: inline-block;
   margin-top: 20px;
+  max-width: 100%; /* Prevents overflow */
+  text-align: center;
+  box-sizing: border-box; /* Includes padding in width calculations */
 }
 
 .cta-button:hover {
@@ -136,6 +139,14 @@ section {
   font-size: 1.1em;
   color: #555;
   margin: 15px 0;
+}
+
+/* Responsive adjustments for images (e.g., Hero logo) */
+.hero-logo {
+  display: block;
+  margin: 20px auto; /* Centres the logo and adds spacing */
+  max-width: 60%; /* Scales the logo to 60% of its original size */
+  height: auto; /* Maintains aspect ratio */
 }
 
 /* Form styling for mobile stacking */
@@ -191,6 +202,7 @@ form button[type="submit"]:hover {
     right: unset;
   }
   .cta-button {
-    width: 100%;
+    width: 90%; /* Adjust button width for mobile */
+    margin: 0 auto; /* Centre the button */
   }
 }
