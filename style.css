@@ -10,7 +10,7 @@ html, body {
 
 /* Header styling */
 header {
-  background-color: #228B22; /* Forest Green */
+  background-color: #00BF63; /* Forest Green */
   color: white;
   padding: 10px 20px;
   position: relative;
@@ -32,7 +32,7 @@ header {
 
 /* Menu button styling (aligned to the right) */
 .menu-button {
-  background-color: #228B22;
+  background-color: #00BF63;
   border: none;
   color: white;
   border-radius: 5px;
@@ -61,7 +61,7 @@ header {
   width: 500px; /* Fixed width */
   max-height: 400px; /* Fixed height */
   overflow-y: auto; /* Add scrolling if content exceeds the height */
-  background-color: #228B22; /* Forest Green */
+  background-color: #00BF63; /* Forest Green */
   border-radius: 10px; /* Rounded corners */
   padding: 20px; /* Add padding inside the dropdown */
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Add shadow for better visibility */
@@ -81,7 +81,7 @@ header {
 }
 
 .dropdown a:hover {
-  background-color: #196619; /* Slightly darker green for hover effect */
+  background-color: #01A254; /* Slightly darker green for hover effect */
   border-radius: 5px; /* Add rounded corners on hover */
 }
 
@@ -101,7 +101,7 @@ section {
 
 /* Call-to-action button styling */
 .cta-button {
-  background-color: #228B22; /* Forest Green */
+  background-color: #00BF63; /* Forest Green */
   color: white;
   padding: 15px 30px;
   text-decoration: none;
@@ -112,7 +112,7 @@ section {
 }
 
 .cta-button:hover {
-  background-color: #196619; /* Slightly darker Forest Green for hover effect */
+  background-color: #01A254; /* Slightly darker Forest Green for hover effect */
 }
 
 /* Hero section styling */
@@ -124,7 +124,7 @@ section {
 
 #hero h1 {
   font-size: 2em;
-  color: #228B22; /* Forest Green */
+  color: #00BF63; /* Forest Green */
   margin-bottom: 10px;
 }
 
@@ -167,7 +167,7 @@ form select {
 
 /* Submit button styling */
 form button[type="submit"] {
-  background-color: #228B22; /* Forest Green */
+  background-color: #00BF63; /* Forest Green */
   color: white;
   padding: 10px 20px;
   border: none;
@@ -180,7 +180,7 @@ form button[type="submit"] {
 }
 
 form button[type="submit"]:hover {
-  background-color: #196619; /* Slightly darker Forest Green for hover effect */
+  background-color: #01A254; /* Slightly darker Forest Green for hover effect */
 }
 
 /* Responsive Design */
