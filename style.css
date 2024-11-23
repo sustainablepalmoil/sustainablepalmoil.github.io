@@ -24,6 +24,7 @@ header {
   display: flex;
   align-items: center; /* Vertically align items */
   justify-content: space-between; /* Space out logo and menu button */
+  position: relative; /* Needed for dropdown positioning */
 }
 
 /* Logo styles */
@@ -55,6 +56,8 @@ header h1 {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative; /* Needed for dropdown alignment */
+  z-index: 200; /* Ensure button is above other elements */
 }
 
 .menu-button svg {
@@ -69,17 +72,18 @@ header h1 {
 
 /* Dropdown navigation */
 .dropdown {
-  display: none;
+  display: none; /* Hidden by default */
   position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 100%; /* Position dropdown below the menu button */
+  right: 0; /* Align dropdown to the right */
   background-color: #228B22; /* Forest Green */
   border-radius: 5px;
   padding: 10px 0;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 100; /* Ensure dropdown is above other elements */
 }
 
+/* Dropdown links styling */
 .dropdown a {
   display: block;
   padding: 10px 20px;
@@ -89,46 +93,11 @@ header h1 {
 }
 
 .dropdown a:hover {
-  background-color: #196619;
-} /* Dropdown styling */
-.dropdown {
-    display: none; /* Hide the dropdown by default */
-    position: absolute;
-    top: 100%; /* Align dropdown directly below the button */
-    right: 0; /* Align dropdown to the right */
-    background-color: #228B22; /* Forest Green */
-    border-radius: 5px;
-    padding: 10px 0;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 100; /* Ensure dropdown is above other elements */
+  background-color: #196619; /* Slightly darker green */
 }
 
-/* Dropdown links styling */
-.dropdown a {
-    display: block;
-    padding: 10px 20px;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.dropdown a:hover {
-    background-color: #196619; /* Slightly darker green */
-}
-
-/* Show dropdown when parent nav is hovered (desktop) */
-nav:hover .dropdown {
-    display: block;
-}
-
-/* Dropdown visibility when menu button is clicked (mobile/JS) */
+/* Show dropdown when nav has active class (mobile/JS) */
 nav.active .dropdown {
-    display: block;
-}
-
-
-/* Show dropdown on button hover */
-nav:hover .dropdown {
   display: block;
 }
 
