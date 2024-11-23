@@ -35,6 +35,7 @@ header {
   height: auto; /* Maintain aspect ratio */
   flex-shrink: 0; /* Prevent the logo from shrinking */
 }
+
 /* Header content (title and nav) */
 .header-content {
   flex-grow: 1; /* Ensures the title and nav occupy remaining space */
@@ -61,7 +62,7 @@ header h1 {
   z-index: 200; /* Ensure the menu button stays on top */
 }
 .menu-button svg {
-  fill: white; /* Set icon color */
+  fill: white; /* Set icon colour */
   width: 24px; /* Icon size */
   height: 24px;
 }
@@ -70,39 +71,41 @@ header h1 {
   background-color: #196619; /* Slightly darker Forest Green for hover effect */
 }
 
-/* Dropdown navigation */
+/* Dropdown navigation - full-page overlay */
 .dropdown {
   display: none; /* Hidden by default */
   position: fixed; /* Position fixed to the viewport */
-  top: 50%; /* Centre vertically */
-  left: 50%; /* Centre horizontally */
-  transform: translate(-50%, -50%); /* Offset to truly centre the dropdown */
-  background-color: #228B22; /* Forest Green */
-  border-radius: 10px; /* Rounded corners for the dropdown */
-  padding: 20px; /* Add padding inside the dropdown */
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Add shadow for better visibility */
+  top: 0; /* Start from the top of the page */
+  left: 0; /* Start from the left of the page */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgba(34, 139, 34, 0.95); /* Semi-transparent Forest Green */
   z-index: 300; /* Ensure the dropdown is above other elements */
-  text-align: centre; /* Align the content in the dropdown */
+  display: flex; /* Use flexbox for centring */
+  align-items: center; /* Vertically centre */
+  justify-content: center; /* Horizontally centre */
+  text-align: center; /* Align text to the centre */
+  padding: 20px; /* Add padding inside the dropdown */
+  box-sizing: border-box; /* Include padding in size */
 }
 
 /* Dropdown links styling */
 .dropdown a {
   display: block;
-  padding: 10px 20px;
+  padding: 15px;
   color: white;
   text-decoration: none;
+  font-size: 1.5em; /* Increase font size for better readability */
   font-weight: bold;
-  text-align: centre; /* Centre text */
 }
 
-
 .dropdown a:hover {
-  background-color: #196619; /* Slightly darker green */
+  background-color: #196619; /* Slightly darker green for hover effect */
 }
 
 /* Show dropdown when active */
 .dropdown.active {
-  display: block; /* Make the dropdown visible */
+  display: flex; /* Make the dropdown visible and centred */
 }
 
 /* Section styling */
@@ -127,73 +130,3 @@ section {
 }
 
 .cta-button:hover {
-  background-color: #196619; /* Slightly darker Forest Green for hover effect */
-}
-
-/* Hero section styling */
-#hero {
-  text-align: center;
-  padding: 30px;
-  background-color: #f4f4f4;
-}
-
-#hero h1 {
-  font-size: 2em;
-  color: #228B22; /* Forest Green */
-  margin-bottom: 10px;
-}
-
-#hero h2, #hero h3 {
-  color: #333;
-}
-
-#hero p {
-  font-size: 1.1em;
-  color: #555;
-  margin: 15px 0;
-}
-
-/* Form styling for mobile stacking */
-form {
-  max-width: 500px; /* Limits the form width for better readability */
-  margin: 0 auto;
-  padding: 20px;
-}
-
-form label {
-  display: block;
-  margin-top: 15px;
-  font-weight: bold;
-}
-
-form input[type="text"],
-form input[type="tel"],
-form input[type="email"],
-form input[type="number"],
-form select {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  margin-bottom: 15px;
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-/* Submit button styling */
-form button[type="submit"] {
-  background-color: #228B22; /* Forest Green */
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-size: 1em;
-  cursor: pointer;
-  display: block;
-  margin-top: 20px;
-  width: 100%;
-}
-
-form button[type="submit"]:hover {
-  background-color: #196619; /* Slightly darker Forest Green for hover effect */
-}
