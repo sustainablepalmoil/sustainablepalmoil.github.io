@@ -90,7 +90,42 @@ header h1 {
 
 .dropdown a:hover {
   background-color: #196619;
+} /* Dropdown styling */
+.dropdown {
+    display: none; /* Hide the dropdown by default */
+    position: absolute;
+    top: 100%; /* Align dropdown directly below the button */
+    right: 0; /* Align dropdown to the right */
+    background-color: #228B22; /* Forest Green */
+    border-radius: 5px;
+    padding: 10px 0;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 100; /* Ensure dropdown is above other elements */
 }
+
+/* Dropdown links styling */
+.dropdown a {
+    display: block;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.dropdown a:hover {
+    background-color: #196619; /* Slightly darker green */
+}
+
+/* Show dropdown when parent nav is hovered (desktop) */
+nav:hover .dropdown {
+    display: block;
+}
+
+/* Dropdown visibility when menu button is clicked (mobile/JS) */
+nav.active .dropdown {
+    display: block;
+}
+
 
 /* Show dropdown on button hover */
 nav:hover .dropdown {
