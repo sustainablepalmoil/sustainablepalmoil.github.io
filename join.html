@@ -98,14 +98,14 @@
             formData.forEach((value, key) => (data[key] = value));
 
             try {
-                const sheet = atob('aHR0cHM6Ly9zY3JpcHQuZ29vZ2xlLmNvbS9tYWNyb3Mvcy9BS2Z5Y2J6aU9ZeXNzamJqSm5TdjZ0NjJ4czFKNkdEaXFPcWZLOWRpYjVISzcxc0V2XzFRVDdPVzBFOFUtZlA4MmFiWlRNb09ibGc=');
-                const response = await fetch(sheet, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(data),
-                });
+                const response = await fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent('https://script.google.com/macros/s/AKfycbziOYyssbjJnSv6t62xs1L6GDiqOqfK9dib5HK71sEv_1QT7OW0E8U-fP82abZTMoOblg/exec')}`, {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+});
+
 
 
 
