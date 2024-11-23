@@ -9,6 +9,31 @@ html {
     max-width: 200px; /* Adjust size to fit your design */
     height: auto; /* Maintains the aspect ratio */
 }
+/* Align the header content */
+.header-container {
+    display: flex;
+    align-items: center; /* Vertically align logo and text */
+    justify-content: flex-start; /* Align content to the left */
+    padding: 10px; /* Add padding around the header */
+}
+
+/* Logo styles */
+.logo {
+    max-width: 150px; /* Adjust size of the logo */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 20px; /* Add space between logo and text */
+}
+
+/* Header content (title and nav) */
+.header-content {
+    flex-grow: 1; /* Ensures the navigation occupies the remaining space */
+}
+
+header h1 {
+    margin: 0; /* Remove default margin */
+    font-size: 1.8rem; /* Adjust title size */
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
