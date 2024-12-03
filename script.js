@@ -34,4 +34,38 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // Dynamically load menu.html (if using dynamic loading for menus)
+  const menuContainer = document.getElementById('menu');
+  if (menuContainer) {
+    fetch('menu.html')
+      .then(response => response.text())
+      .then(data => {
+        menuContainer.innerHTML = data;
+
+        // Reapply menu functionality to dynamically loaded content
+        const dynamicMenuButton = document.querySelector('.menu-button');
+        const dynamicDropdown = document.querySelector('.dropdown');
+
+        if (dynamicMenuButton && dynamicDropdown) {
+          dynamicMenuButton.addEventListener('click', (event) => {
+            event.stopPropagation();
+            dynamicDropdown.classList.toggle('active');
+          });
+
+          document.addEventListener('click', (event) => {
+            if (!dynamicDropdown.contains(event.target) && !dynamicMenuButton.contains(event.target)) {
+              dynamicDropdown.classList.remove('active');
+            }
+          });
+
+          document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+              dynamicDropdown.classList.remove('active');
+            }
+          });
+        }
+      })
+      .catch(error => console.error('Error loading menu:', error));
+  }
 });
