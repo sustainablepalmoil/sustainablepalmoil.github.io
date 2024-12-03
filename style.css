@@ -58,13 +58,13 @@ header {
   position: absolute;
   top: 100%; /* Place directly below the menu button */
   right: 0; /* Align to the right edge of the menu button */
-  width: 500px; /* Fixed width */
+  width: 300px; /* Adjusted width for cleaner appearance */
   max-height: 400px; /* Fixed height */
   overflow-y: auto; /* Add scrolling if content exceeds the height */
   background-color: #00BF63; /* Forest Green */
   border-radius: 10px; /* Rounded corners */
-  padding: 20px; /* Add padding inside the dropdown */
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Add shadow for better visibility */
+  padding: 10px; /* Add padding inside the dropdown */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for better visibility */
   z-index: 300; /* Ensure the dropdown is above other elements */
   text-align: left; /* Align content to the left */
 }
@@ -72,17 +72,17 @@ header {
 /* Dropdown links styling */
 .dropdown a {
   display: block;
-  padding: 10px 20px;
+  padding: 10px 15px;
   color: white;
   text-decoration: none;
   font-size: 1em; /* Adjust font size */
   font-weight: bold;
-  margin-bottom: 10px; /* Add space between links */
+  margin-bottom: 5px; /* Add space between links */
+  border-radius: 5px;
 }
 
 .dropdown a:hover {
   background-color: #01A254; /* Slightly darker green for hover effect */
-  border-radius: 5px; /* Add rounded corners on hover */
 }
 
 /* Dropdown visibility when active */
@@ -188,6 +188,7 @@ section {
     left: 5%; /* Centre dropdown on mobile devices */
     right: unset;
   }
+
   .cta-button {
     width: 90%; /* Adjust button width for mobile */
     margin: 0 auto; /* Centre the button */
