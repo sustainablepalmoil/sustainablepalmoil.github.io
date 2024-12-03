@@ -3,43 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join Us – Sustainable Palm Oil Cooperative</title>
+    <title>Join Us – Palm Eco Alliance</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <style>
+        form {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        form label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        form input,
+        form select,
+        form button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form button {
+            background-color: #00BF63; /* Forest Green */
+            color: white;
+            font-size: 1em;
+            cursor: pointer;
+            border: none;
+        }
+
+        form button:hover {
+            background-color: #01A254; /* Darker Forest Green for hover effect */
+        }
+
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        section h2 {
+            color: #228B22;
+        }
+    </style>
 </head>
 <body>
 <header>
-  <div class="header-container">
-    <!-- Logo with link to homepage -->
-    <a href="index.html">
-      <img src="https://sustainablepalmoil.github.io/palm-eco-logo.png" alt="PalmEco Logo" class="logo">
-    </a>
+    <div class="header-container">
+        <!-- Logo with link to homepage -->
+        <a href="index.html">
+            <img src="https://sustainablepalmoil.github.io/palm-eco-logo.png" alt="PalmEco Logo" class="logo">
+        </a>
 
-    <!-- Menu Button -->
-    <button class="menu-button">
-      <svg width="24" height="24" viewBox="0 0 24 24">
-        <path fill="white" d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />
-      </svg>
-    </button>
-  </div>
+        <!-- Menu Button -->
+        <button class="menu-button">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+                <path fill="white" d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />
+            </svg>
+        </button>
+    </div>
 
-  <!-- Dropdown Menu -->
-<div class="dropdown" id="menu"></div>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        fetch('menu.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('menu').innerHTML = data;
-            });
-    });
-</script>
-
+    <!-- Dynamic Menu -->
+    <div class="dropdown" id="menu"></div>
 </header>
 
 <section>
-    <h2>Join the Cooperative</h2>
-    <p>Ready to join? Meet our criteria and become a part of a cooperative that values sustainability, fair pricing, and economic growth.</p>
-    <p><strong>Note:</strong> Please fill out as many fields as possible. Fields marked with an asterisk (*) are required.</p>
+    <h2>Join Palm Eco Alliance</h2>
+    <p>Join the movement towards a more sustainable future. Apply to become a member of Palm Eco Alliance and gain access to premium markets, advanced farming practices, and the highest standards of sustainability.</p>
+    <p><strong>Note:</strong> Fields marked with an asterisk (*) are required. Please provide as much information as possible to assist us in reviewing your application.</p>
 
     <form id="join-form">
         <label for="name">* Full Name:</label>
@@ -95,31 +134,58 @@
 </section>
 
 <footer>
-    <p>&copy; 2024 Sustainable Palm Oil Cooperative. All rights reserved.</p>
+    <p>&copy; 2024 Palm Eco Alliance. All rights reserved.</p>
 </footer>
 
 <script>
-    // Dropdown Menu Script
-    document.addEventListener('DOMContentLoaded', () => {
-        const menuButton = document.querySelector('.menu-button');
-        const dropdown = document.querySelector('.dropdown');
+    // Dynamic Menu Script
+    document.addEventListener('DOMContentLoaded', function () {
+        fetch('menu.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('menu').innerHTML = data;
 
-        menuButton.addEventListener('click', () => {
-            dropdown.classList.toggle('active');
-        });
+                // Menu dropdown functionality
+                const menuButton = document.querySelector('.menu-button');
+                const dropdown = document.querySelector('.dropdown');
+
+                if (menuButton && dropdown) {
+                    menuButton.addEventListener('click', (event) => {
+                        event.stopPropagation();
+                        dropdown.classList.toggle('active');
+                    });
+
+                    document.addEventListener('click', (event) => {
+                        if (!dropdown.contains(event.target) && !menuButton.contains(event.target)) {
+                            dropdown.classList.remove('active');
+                        }
+                    });
+
+                    document.addEventListener('keydown', (event) => {
+                        if (event.key === 'Escape') {
+                            dropdown.classList.remove('active');
+                        }
+                    });
+                }
+            })
+            .catch(error => console.error('Error loading menu:', error));
     });
 
     // Form Submission Script
     document.getElementById('join-form').addEventListener('submit', async function (event) {
-        event.preventDefault(); // Prevent default form submission
+        event.preventDefault();
 
-        // Gather form data
         const formData = new FormData(event.target);
         const data = {};
         formData.forEach((value, key) => (data[key] = value));
 
         try {
-            const response = await fetch('https://cors-anywhere.herokuapp.com/https://script.google.com/macros/s/AKfycbziOYyssbjJnSv6t62xs1L6GDiqOqfK9dib5HK71sEv_1QT7OW0E8U-fP82abZTMoOblg/exec', {
+            const response = await fetch('https://script.google.com/macros/s/YOUR_ENDPOINT_HERE/exec', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -131,14 +197,13 @@
                 alert('Your application has been submitted successfully!');
                 event.target.reset();
             } else {
-                alert('There was an error submitting your application. Please try again later.');
+                alert('Error submitting application. Please try again later.');
             }
         } catch (error) {
-            alert('There was an error submitting your application. Please try again later.');
+            alert('Error submitting application. Please try again later.');
             console.error(error);
         }
     });
 </script>
-
 </body>
 </html>
