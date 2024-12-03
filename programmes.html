@@ -3,90 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programmes – Sustainable Palm Oil Cooperative</title>
+    <title>Programmes – Palm Eco Alliance</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <style>
+        section {
+            padding: 20px;
+            text-align: center;
+            background-color: #f9f9f9;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+        }
+
+        h2, h3 {
+            color: #228B22; /* Forest Green */
+        }
+
+        p {
+            text-align: justify;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+    </style>
 </head>
 <body>
 <header>
-  <div class="header-container">
-    <!-- Logo with link to homepage -->
-    <a href="index.html">
-      <img src="https://sustainablepalmoil.github.io/palm-eco-logo.png" alt="PalmEco Logo" class="logo">
-    </a>
+    <div class="header-container">
+        <!-- Logo with link to homepage -->
+        <a href="index.html">
+            <img src="https://sustainablepalmoil.github.io/palm-eco-logo.png" alt="PalmEco Logo" class="logo">
+        </a>
 
-    <!-- Menu Button -->
-    <button class="menu-button">
-      <svg width="24" height="24" viewBox="0 0 24 24">
-        <path fill="white" d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />
-      </svg>
-    </button>
-  </div>
+        <!-- Menu Button -->
+        <button class="menu-button">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+                <path fill="white" d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />
+            </svg>
+        </button>
+    </div>
 
-  <!-- Dropdown Menu -->
-  <div class="dropdown" id="menu"></div>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        fetch('menu.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('menu').innerHTML = data;
-            });
-    });
-</script>
-
+    <!-- Dynamic Menu -->
+    <div class="dropdown" id="menu"></div>
 </header>
 
 <section>
     <h2>Our Programmes</h2>
-    <h3>Phase 1: Cooperative Buying Group Onboarding</h3>
-    <p>Farmers are immediately enrolled in the buying group to enhance selling power from day one.</p>
+    <h3>Phase 1: Market Access and Onboarding</h3>
+    <p>Farmers are enrolled to gain immediate access to premium markets. The onboarding process empowers members by enhancing their selling power through collective action.</p>
+
     <h3>Phase 2: Line of Credit Programme</h3>
-    <p>Members become eligible for short-term credit lines after three months of membership.</p>
+    <p>After three months of membership, farmers become eligible for short-term credit lines to cover operational costs and boost productivity.</p>
+
     <h3>Phase 3: Capital Expenditure Programme</h3>
-    <p>After nine months, members can access funds for long-term capital investments like machinery and infrastructure.</p>
-    <h3>Compliance Support</h3>
-    <p>We provide compliance tools, including satellite monitoring, blockchain traceability, and environmental analysis, ensuring all produce meets EUDR standards.</p>
+    <p>Once members have been active for nine months, they can access funds to make long-term investments in advanced machinery and infrastructure.</p>
+
+    <h3>Compliance and Sustainability Support</h3>
+    <p>With tools like satellite monitoring, blockchain traceability, and environmental analysis, we ensure all produce meets global standards, including the EU Deforestation Regulation (EUDR). This keeps members competitive in premium markets.</p>
 </section>
 
 <footer>
-    <p>&copy; 2024 Sustainable Palm Oil Cooperative. All rights reserved.</p>
+    <p>&copy; 2024 Palm Eco Alliance. All rights reserved.</p>
 </footer>
 
-<!-- Chatra Chatbox Custom Colors -->
+<!-- Dynamic Menu Script -->
 <script>
-    window.ChatraSetup = {
-        colors: {
-            buttonText: '#f0f0f0', /* Chat button text colour */
-            buttonBg: '#228b22'    /* Chat button background colour */
-        }
-    };
-</script>
+    document.addEventListener('DOMContentLoaded', function () {
+        fetch('menu.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('menu').innerHTML = data;
 
-<!-- Chatra Chatbox Code -->
-<script>
-    (function(d, w, c) {
-        w.ChatraID = 'A6EmiTr69DmntesTK';
-        var s = d.createElement('script');
-        w[c] = w[c] || function() {
-            (w[c].q = w[c].q || []).push(arguments);
-        };
-        s.async = true;
-        s.src = 'https://call.chatra.io/chatra.js';
-        if (d.head) d.head.appendChild(s);
-    })(document, window, 'Chatra');
-</script>
+                // Menu dropdown functionality
+                const menuButton = document.querySelector('.menu-button');
+                const dropdown = document.querySelector('.dropdown');
 
-<!-- Add JavaScript for Dropdown -->
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const menuButton = document.querySelector('.menu-button');
-        const dropdown = document.querySelector('.dropdown');
+                if (menuButton && dropdown) {
+                    menuButton.addEventListener('click', (event) => {
+                        event.stopPropagation();
+                        dropdown.classList.toggle('active');
+                    });
 
-        menuButton.addEventListener('click', () => {
-            dropdown.classList.toggle('active');
-        });
+                    document.addEventListener('click', (event) => {
+                        if (!dropdown.contains(event.target) && !menuButton.contains(event.target)) {
+                            dropdown.classList.remove('active');
+                        }
+                    });
+
+                    document.addEventListener('keydown', (event) => {
+                        if (event.key === 'Escape') {
+                            dropdown.classList.remove('active');
+                        }
+                    });
+                }
+            })
+            .catch(error => console.error('Error loading menu:', error));
     });
 </script>
-
 </body>
 </html>
