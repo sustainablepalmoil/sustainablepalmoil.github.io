@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
+    <title>About Us - Palm Eco Alliance</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
     <style>
         .about-image {
             display: block;
-            margin: 20px auto; /* Centres the image and adds spacing */
-            max-width: 60%; /* Sets the image to 60% of its original size */
-            height: auto; /* Maintains aspect ratio */
-            border-radius: 10px; /* Optional: Adds rounded corners */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Adds shadow for better styling */
+            margin: 20px auto;
+            max-width: 60%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         section {
             padding: 20px;
-            text-align: center; /* Centers text and content in the section */
+            text-align: center;
             background-color: #f9f9f9;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -33,36 +33,31 @@
             font-size: 1.1em;
             line-height: 1.6;
         }
+
+        ul {
+            text-align: justify;
+            margin: 10px 20px;
+        }
     </style>
 </head>
 <body>
 <header>
-  <div class="header-container">
-    <!-- Logo with link to homepage -->
-    <a href="index.html">
-      <img src="https://sustainablepalmoil.github.io/palm-eco-logo.png" alt="PalmEco Logo" class="logo">
-    </a>
+    <div class="header-container">
+        <!-- Logo with link to homepage -->
+        <a href="index.html">
+            <img src="https://sustainablepalmoil.github.io/palm-eco-logo.png" alt="PalmEco Logo" class="logo">
+        </a>
 
-    <!-- Menu Button -->
-    <button class="menu-button">
-      <svg width="24" height="24" viewBox="0 0 24 24">
-        <path fill="white" d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />
-      </svg>
-    </button>
-  </div>
+        <!-- Menu Button -->
+        <button class="menu-button">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+                <path fill="white" d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />
+            </svg>
+        </button>
+    </div>
 
-  <!-- Dropdown Menu -->
- <div class="dropdown" id="menu"></div>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        fetch('menu.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('menu').innerHTML = data;
-            });
-    });
-</script>
-
+    <!-- Dynamic Menu -->
+    <div id="menu"></div>
 </header>
 
 <section>
@@ -73,7 +68,7 @@
     <p>To transform palm oil production in Indonesia by providing farmers with access to premium markets, fair pricing, and innovative solutions. Through cutting-edge technology, rigorous certifications, and comprehensive support, we aim to establish new benchmarks for sustainable practices.</p>
 
     <h3>What We Do</h3>
-    <ul style="text-align: left; margin: 0 auto; max-width: 800px;">
+    <ul>
         <li><strong>Empowering Farmers:</strong> We partner with farmers to improve yields, optimise practices, and enhance profitability through tailored training and financial incentives.</li>
         <li><strong>Leading with Innovation:</strong> Using advanced Geographic Information System (GIS) technology, satellite monitoring, and blockchain-based traceability, we ensure unmatched transparency and accountability.</li>
         <li><strong>Building Sustainable Futures:</strong> Promoting regenerative agricultural practices, protecting biodiversity, and enabling deforestation-free production for a sustainable supply chain.</li>
@@ -81,7 +76,7 @@
 
     <h3>Our Certification: Setting New Standards</h3>
     <p>The <strong>EcoSawit+ Certification</strong> sets a new benchmark for sustainable palm oil. Combining rigorous scientific standards with advanced monitoring systems, it ensures:</p>
-    <ul style="text-align: left; margin: 0 auto; max-width: 800px;">
+    <ul>
         <li>Full compliance with global standards such as the EU Deforestation Regulation (EUDR) and RSPO requirements.</li>
         <li>Traceability of palm oil from farm to market, using blockchain and satellite technology.</li>
         <li>Responsible land management that protects biodiversity and promotes environmental stewardship.</li>
@@ -97,39 +92,43 @@
     <p>&copy; 2024 Palm Eco Alliance. All rights reserved.</p>
 </footer>
 
-<!-- Chatra Chatbox Custom Colors -->
+<!-- Dynamic Menu Script -->
 <script>
-  window.ChatraSetup = {
-      colors: {
-          buttonText: '#f0f0f0', /* chat button text color */
-          buttonBg: '#228b22'    /* chat button background color */
-      }
-  };
-</script>
+    document.addEventListener('DOMContentLoaded', function () {
+        fetch('menu.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('menu').innerHTML = data;
 
-<!-- Chatra Chatbox Code -->
-<script>
-    (function(d, w, c) {
-        w.ChatraID = 'A6EmiTr69DmntesTK';
-        var s = d.createElement('script');
-        w[c] = w[c] || function() {
-            (w[c].q = w[c].q || []).push(arguments);
-        };
-        s.async = true;
-        s.src = 'https://call.chatra.io/chatra.js';
-        if (d.head) d.head.appendChild(s);
-    })(document, window, 'Chatra');
-</script>
+                // Add menu dropdown functionality
+                const menuButton = document.querySelector('.menu-button');
+                const dropdown = document.querySelector('.dropdown');
 
-<!-- JavaScript for Dropdown -->
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const menuButton = document.querySelector('.menu-button');
-        const dropdown = document.querySelector('.dropdown');
+                if (menuButton && dropdown) {
+                    menuButton.addEventListener('click', (event) => {
+                        event.stopPropagation();
+                        dropdown.classList.toggle('active');
+                    });
 
-        menuButton.addEventListener('click', () => {
-            dropdown.classList.toggle('active');
-        });
+                    document.addEventListener('click', (event) => {
+                        if (!dropdown.contains(event.target) && !menuButton.contains(event.target)) {
+                            dropdown.classList.remove('active');
+                        }
+                    });
+
+                    document.addEventListener('keydown', (event) => {
+                        if (event.key === 'Escape') {
+                            dropdown.classList.remove('active');
+                        }
+                    });
+                }
+            })
+            .catch(error => console.error('Error loading menu:', error));
     });
 </script>
 </body>
