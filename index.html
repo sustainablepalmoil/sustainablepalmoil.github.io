@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sustainable Palm Oil Cooperative</title>
+    <title>Eco Palm Alliance</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
     <style>
         .hero-logo {
@@ -49,40 +49,30 @@
 
 <!-- Header Section -->
 <header>
-  <div class="header-container">
-    <a href="index.html">
-      <img src="https://sustainablepalmoil.github.io/palm-eco-logo.png" alt="PalmEco Logo" class="logo">
-    </a>
+    <div class="header-container">
+        <!-- Logo with link to homepage -->
+        <a href="index.html">
+            <img src="https://sustainablepalmoil.github.io/palm-eco-logo.png" alt="PalmEco Logo" class="logo">
+        </a>
 
-    <button class="menu-button">
-      <svg width="24" height="24" viewBox="0 0 24 24">
-        <path fill="white" d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />
-      </svg>
-    </button>
-  </div>
+        <!-- Menu Button -->
+        <button class="menu-button">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+                <path fill="white" d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />
+            </svg>
+        </button>
+    </div>
 
-<div class="dropdown" id="menu"></div>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        fetch('menu.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('menu').innerHTML = data;
-            });
-    });
-</script>
-
-
+    <!-- Dynamic Menu -->
+    <div id="menu"></div>
 </header>
 
 <!-- Hero Section -->
 <section id="hero">
-    <img src="https://sustainablepalmoil.github.io/palm-eco-green.png" 
-         alt="PalmEcoCoop Logo" 
-         class="hero-logo">
+    <img src="https://sustainablepalmoil.github.io/palm-eco-green.png" alt="PalmEco Logo" class="hero-logo">
     <h1>Welcome to the Future of Palm Oil Farming</h1>
     <p><strong>Empower your farm. Increase your profits. Secure your future.</strong></p>
-    <p>As a member of the Palm Eco Alliance, you’re not just joining an organisation—you’re joining a movement that puts farmers first...</p>
+    <p>As a member of the Eco Palm Alliance, you’re not just joining an organisation—you’re joining a movement that puts farmers first...</p>
     <a href="join.html" class="cta-button">Become a Member Now</a>
 </section>
 
@@ -111,15 +101,46 @@
     <p>&copy; 2024 Eco Palm Alliance. All rights reserved.</p>
 </footer>
 
-<!-- Add JavaScript for Dropdown -->
+<!-- JavaScript -->
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const menuButton = document.querySelector('.menu-button');
-        const dropdown = document.querySelector('.dropdown');
+    document.addEventListener('DOMContentLoaded', function () {
+        // Load menu.html dynamically
+        fetch('menu.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('menu').innerHTML = data;
 
-        menuButton.addEventListener('click', () => {
-            dropdown.classList.toggle('active');
-        });
+                // Menu dropdown functionality
+                const menuButton = document.querySelector('.menu-button');
+                const dropdown = document.querySelector('.dropdown');
+
+                if (menuButton && dropdown) {
+                    menuButton.addEventListener('click', (event) => {
+                        event.stopPropagation(); // Prevent event from bubbling up
+                        dropdown.classList.toggle('active');
+                    });
+
+                    // Close dropdown when clicking outside
+                    document.addEventListener('click', (event) => {
+                        if (!dropdown.contains(event.target) && !menuButton.contains(event.target)) {
+                            dropdown.classList.remove('active');
+                        }
+                    });
+
+                    // Close dropdown when the Escape key is pressed
+                    document.addEventListener('keydown', (event) => {
+                        if (event.key === 'Escape') {
+                            dropdown.classList.remove('active');
+                        }
+                    });
+                }
+            })
+            .catch(error => console.error('Error loading menu:', error));
     });
 </script>
 </body>
