@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Menu dropdown functionality
   const menuButton = document.querySelector('.menu-button');
   const dropdown = document.querySelector('.dropdown');
 
@@ -22,4 +23,15 @@ document.addEventListener('DOMContentLoaded', () => {
         dropdown.classList.remove('active');
       }
     });
-  } else 
+  }
+
+  // Flowchart interactivity
+  const nodes = document.querySelectorAll('.node');
+  if (nodes.length) {
+    nodes.forEach((node) => {
+      node.addEventListener('click', () => {
+        alert(`Details about ${node.textContent.trim()}`);
+      });
+    });
+  }
+});
