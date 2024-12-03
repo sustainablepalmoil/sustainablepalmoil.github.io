@@ -52,13 +52,17 @@
   </div>
 
   <!-- Dropdown Menu -->
-  <div class="dropdown">
-    <a href="index.html">Home</a>
-    <a href="about.html">About Us</a>
-    <a href="membership.html">Membership Benefits</a>
-    <a href="programmes.html">Our Programmes</a>
-    <a href="join.html">Join Us</a>
-  </div>
+ <div class="dropdown" id="menu"></div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        fetch('menu.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('menu').innerHTML = data;
+            });
+    });
+</script>
+
 </header>
 
 <section>
