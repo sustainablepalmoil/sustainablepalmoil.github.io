@@ -64,29 +64,20 @@
 </head>
 <body>
 <header>
-  <div class="header-container">
-    <a href="index.html">
-      <img src="https://sustainablepalmoil.github.io/palm-eco-logo.png" alt="PalmEco Logo" class="logo">
-    </a>
+    <div class="header-container">
+        <a href="index.html">
+            <img src="https://sustainablepalmoil.github.io/palm-eco-logo.png" alt="PalmEco Logo" class="logo">
+        </a>
 
-    <button class="menu-button">
-      <svg width="24" height="24" viewBox="0 0 24 24">
-        <path fill="white" d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />
-      </svg>
-    </button>
-  </div>
+        <button class="menu-button">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+                <path fill="white" d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />
+            </svg>
+        </button>
+    </div>
     
-<div class="dropdown" id="menu"></div>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        fetch('menu.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('menu').innerHTML = data;
-            });
-    });
-</script>
-
+    <!-- Dynamic Menu -->
+    <div class="dropdown" id="menu"></div>
 </header>
 
 <section class="certification-section">
@@ -101,7 +92,7 @@
         <li><strong>Regenerative Practices:</strong> Focuses on restoring ecosystems, improving biodiversity, and promoting carbon sequestration.</li>
     </ul>
 
-    <h3>EcoSawit+ Certification Process </h3>
+    <h3>EcoSawit+ Certification Process</h3>
     <div class="flowchart">
         <div class="node">Pre-Application Phase<br>- Express interest<br>- Eligibility screening</div>
         <div class="arrow">↓</div>
@@ -123,14 +114,43 @@
     <p>&copy; 2024 Palm Eco Alliance. All rights reserved.</p>
 </footer>
 
+<!-- Dynamic Menu Script -->
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const menuButton = document.querySelector('.menu-button');
-        const dropdown = document.querySelector('.dropdown');
+    document.addEventListener('DOMContentLoaded', function () {
+        fetch('menu.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('menu').innerHTML = data;
 
-        menuButton.addEventListener('click', () => {
-            dropdown.classList.toggle('active');
-        });
+                // Add menu dropdown functionality
+                const menuButton = document.querySelector('.menu-button');
+                const dropdown = document.querySelector('.dropdown');
+
+                if (menuButton && dropdown) {
+                    menuButton.addEventListener('click', (event) => {
+                        event.stopPropagation();
+                        dropdown.classList.toggle('active');
+                    });
+
+                    document.addEventListener('click', (event) => {
+                        if (!dropdown.contains(event.target) && !menuButton.contains(event.target)) {
+                            dropdown.classList.remove('active');
+                        }
+                    });
+
+                    document.addEventListener('keydown', (event) => {
+                        if (event.key === 'Escape') {
+                            dropdown.classList.remove('active');
+                        }
+                    });
+                }
+            })
+            .catch(error => console.error('Error loading menu:', error));
     });
 </script>
 </body>
