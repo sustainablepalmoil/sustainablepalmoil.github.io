@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Membership – Palm Eco Alliance</title>
+    <title>EcoSawit+ Certification Booklet</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
     <style>
         body {
@@ -14,12 +14,28 @@
             padding: 0;
         }
 
+        .container {
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 900px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
         header {
             background-color: #00BF63;
             color: white;
             padding: 15px 20px;
-            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             border-radius: 10px 10px 0 0;
+        }
+
+        header .logo {
+            max-width: 150px;
+            height: auto;
         }
 
         footer {
@@ -31,112 +47,158 @@
             margin-top: 20px;
         }
 
-        section {
-            padding: 20px;
-            text-align: center;
-            background-color: #f9f9f9;
-            margin: 20px auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            max-width: 900px;
-        }
-
-        h2, h3 {
+        h1, h2, h3 {
             color: #00BF63;
         }
 
-        p, ul {
+        p {
             text-align: justify;
-            font-size: 1.1em;
-            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .flowchart {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .node {
+            text-align: center;
+            background-color: #00BF63;
+            color: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            width: 80%;
+            max-width: 400px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .highlighted-node {
+            border-radius: 50%;
+            padding: 20px;
+            width: 150px;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #00BF63;
+            color: white;
+            font-size: 16px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .arrow {
+            color: #333;
+            font-size: 24px;
+            margin: 5px 0;
         }
 
         ul {
             list-style-type: disc;
             margin: 10px 20px;
         }
+
+        .form-step {
+            margin-bottom: 15px;
+            font-size: 1em;
+            color: #333;
+        }
     </style>
 </head>
 <body>
-<header>
-    <div class="header-container">
+    <header>
         <!-- Logo with link to homepage -->
         <a href="index.html">
             <img src="https://sustainablepalmoil.github.io/palm-eco-logo.png" alt="PalmEco Logo" class="logo">
         </a>
-
         <!-- Menu Button -->
         <button class="menu-button">
             <svg width="24" height="24" viewBox="0 0 24 24">
                 <path fill="white" d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />
             </svg>
         </button>
+        <!-- Dynamic Menu -->
+        <div id="menu"></div>
+    </header>
+
+    <div class="container">
+        <h2>About EcoSawit+</h2>
+        <p>The EcoSawit+ Certification represents the gold standard in sustainable palm oil production. It aligns with global benchmarks, such as the EU Deforestation Regulation (EUDR) and RSPO standards, empowering Indonesian farmers while ensuring the highest levels of environmental stewardship and traceability.</p>
+
+        <h3>Key Benefits</h3>
+        <ul>
+            <li><strong>Global Compliance:</strong> Meets stringent international sustainability standards.</li>
+            <li><strong>Enhanced Transparency:</strong> Leverages blockchain and satellite monitoring for full traceability.</li>
+            <li><strong>Farmer Empowerment:</strong> Provides training, resources, and incentives for sustainable practices.</li>
+            <li><strong>Eco-Restoration:</strong> Focuses on biodiversity improvement and carbon sequestration.</li>
+        </ul>
+
+        <h3>Certification Process</h3>
+        <div class="flowchart">
+            <div class="node">1. Pre-Application Phase<br><span class="form-step">Farmers fill out Form I (Basic Information) and Form II (Eligibility Checklist).</span><br><strong>Authority:</strong> EcoSawit+ Registration Desk</div>
+            <div class="arrow">↓</div>
+            <div class="node">2. On-the-Ground GIS Assessment<br><span class="form-step">EcoSawit+ Field Officer collects and verifies land data.</span><br><strong>Authority:</strong> EcoSawit+ Field Team</div>
+            <div class="arrow">↓</div>
+            <div class="node">3. Satellite Verification<br><span class="form-step">Cross-check submitted data with satellite imagery.</span><br><strong>Authority:</strong> EcoSawit+ Compliance Team</div>
+            <div class="arrow">↓</div>
+            <div class="node">4. Audit and Reporting<br><span class="form-step">Farmers receive the audit report with recommendations.</span><br><strong>Authority:</strong> EcoSawit+ Auditors</div>
+            <div class="arrow">↓</div>
+            <div class="highlighted-node">5. Certification Issuance<br>EcoSawit+ Certificate Granted</div>
+            <div class="arrow">↓</div>
+            <div class="node">6. Market Access<br><span class="form-step">Farmers use EcoSawit+ Label and connect with buyers.</span><br><strong>Authority:</strong> EcoSawit+ Marketing Team</div>
+            <div class="arrow">↓</div>
+            <div class="node">7. Continuous Monitoring<br><span class="form-step">Annual updates and reassessments every two years.</span><br><strong>Authority:</strong> EcoSawit+ Monitoring Unit</div>
+        </div>
     </div>
 
-    <!-- Dynamic Menu -->
-    <div id="menu"></div>
-</header>
+    <footer>
+        <p>&copy; 2024 Palm Eco Alliance. All rights reserved.</p>
+    </footer>
 
-<section>
-    <h2>Membership Benefits</h2>
-    <h3>Enhanced Market Access</h3>
-    <p>Gain access to lucrative EU and international markets by meeting compliance standards such as the EU Deforestation Regulation (EUDR) and RSPO certification requirements.</p>
-    
-    <h3>Competitive Selling Power</h3>
-    <p>As part of the Palm Eco Alliance, members leverage collective bargaining power to negotiate better prices and access premium buyers.</p>
-    
-    <h3>Access to Financing</h3>
-    <ul>
-        <li><strong>Line of Credit:</strong> Available after three months of membership to support short-term financial needs.</li>
-        <li><strong>Capital Expenditure Program:</strong> Accessible after nine months to fund machinery upgrades and improve productivity.</li>
-    </ul>
-    
-    <h3>Knowledge Sharing & Support</h3>
-    <p>Receive ongoing support in sustainable practices, business operations, and productivity improvement to ensure long-term success.</p>
-</section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch('menu.html')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById('menu').innerHTML = data;
 
-<footer>
-    <p>&copy; 2024 Palm Eco Alliance. All rights reserved.</p>
-</footer>
+                    const menuButton = document.querySelector('.menu-button');
+                    const dropdown = document.querySelector('.dropdown');
 
-<!-- Dynamic Menu Script -->
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        fetch('menu.html')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById('menu').innerHTML = data;
+                    if (menuButton && dropdown) {
+                        menuButton.addEventListener('click', (event) => {
+                            event.stopPropagation();
+                            dropdown.classList.toggle('active');
+                        });
 
-                // Menu dropdown functionality
-                const menuButton = document.querySelector('.menu-button');
-                const dropdown = document.querySelector('.dropdown');
+                        document.addEventListener('click', (event) => {
+                            if (!dropdown.contains(event.target) && !menuButton.contains(event.target)) {
+                                dropdown.classList.remove('active');
+                            }
+                        });
 
-                if (menuButton && dropdown) {
-                    menuButton.addEventListener('click', (event) => {
-                        event.stopPropagation();
-                        dropdown.classList.toggle('active');
-                    });
-
-                    document.addEventListener('click', (event) => {
-                        if (!dropdown.contains(event.target) && !menuButton.contains(event.target)) {
-                            dropdown.classList.remove('active');
-                        }
-                    });
-
-                    document.addEventListener('keydown', (event) => {
-                        if (event.key === 'Escape') {
-                            dropdown.classList.remove('active');
-                        }
-                    });
-                }
-            })
-            .catch(error => console.error('Error loading menu:', error));
-    });
-</script>
+                        document.addEventListener('keydown', (event) => {
+                            if (event.key === 'Escape') {
+                                dropdown.classList.remove('active');
+                            }
+                        });
+                    }
+                })
+                .catch(error => console.error('Error loading menu:', error));
+        });
+    </script>
 </body>
 </html>
