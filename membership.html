@@ -31,11 +31,20 @@
             align-items: center;
             justify-content: space-between;
             border-radius: 10px 10px 0 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 999;
         }
 
         header .logo {
             max-width: 150px;
             height: auto;
+        }
+
+        body {
+            padding-top: 80px; /* Prevent content from overlapping with the fixed header */
         }
 
         footer {
