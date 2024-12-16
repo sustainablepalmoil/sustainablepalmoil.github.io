@@ -24,7 +24,7 @@
         }
 
         header {
-            background-color: #228B22;
+            background-color: #00BF63;
             color: white;
             padding: 15px 20px;
             text-align: center;
@@ -32,7 +32,7 @@
         }
 
         footer {
-            background-color: #228B22;
+            background-color: #00BF63;
             color: white;
             text-align: center;
             padding: 10px;
@@ -41,7 +41,7 @@
         }
 
         h1, h2, h3 {
-            color: #228B22;
+            color: #00BF63;
         }
 
         p {
@@ -62,7 +62,7 @@
 
         .node {
             text-align: center;
-            background-color: #4caf50;
+            background-color: #00BF63;
             color: white;
             padding: 15px;
             margin: 10px 0;
@@ -81,9 +81,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #228B22;
+            background-color: #00BF63;
             color: white;
             font-size: 16px;
+            text-align: center;
             margin: 20px 0;
         }
 
@@ -107,7 +108,19 @@
 </head>
 <body>
     <header>
-        <h1>EcoSawit+ Certification</h1>
+        <div class="header-container">
+            <a href="index.html">
+                <img src="https://sustainablepalmoil.github.io/palm-eco-green-logo.png" alt="PalmEcoGreen Logo" class="logo">
+            </a>
+
+            <button class="menu-button">
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                    <path fill="white" d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />
+                </svg>
+            </button>
+        </div>
+
+        <div id="menu"></div>
     </header>
 
     <div class="container">
@@ -143,5 +156,43 @@
     <footer>
         <p>&copy; 2024 Palm Eco Alliance. All rights reserved.</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch('menu.html')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById('menu').innerHTML = data;
+
+                    const menuButton = document.querySelector('.menu-button');
+                    const dropdown = document.querySelector('.dropdown');
+
+                    if (menuButton && dropdown) {
+                        menuButton.addEventListener('click', (event) => {
+                            event.stopPropagation();
+                            dropdown.classList.toggle('active');
+                        });
+
+                        document.addEventListener('click', (event) => {
+                            if (!dropdown.contains(event.target) && !menuButton.contains(event.target)) {
+                                dropdown.classList.remove('active');
+                            }
+                        });
+
+                        document.addEventListener('keydown', (event) => {
+                            if (event.key === 'Escape') {
+                                dropdown.classList.remove('active');
+                            }
+                        });
+                    }
+                })
+                .catch(error => console.error('Error loading menu:', error));
+        });
+    </script>
 </body>
 </html>
