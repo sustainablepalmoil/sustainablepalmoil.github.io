@@ -10,39 +10,43 @@ html, body {
 
 /* Header styling */
 header {
+  display: flex;
+  justify-content: space-between; /* Space out logo and menu button */
+  align-items: center; /* Centre items vertically */
   background-color: #00BF63; /* Forest Green */
   color: white;
   padding: 10px 20px;
   position: relative;
   z-index: 200; /* Keep header above other elements */
+  border-radius: 10px 10px 0 0; /* Rounded top corners */
 }
 
 /* Header container layout */
 .header-container {
   display: flex;
+  justify-content: space-between; /* Logo on left, menu button on right */
   align-items: center;
-  justify-content: space-between; /* Space out logo and menu button */
-  padding: 15px 20px;
-  border-radius: 10px 10px 0 0;
+  width: 100%; /* Ensure the container spans the full width */
 }
 
 /* Logo styling */
 .logo {
   max-width: 150px; /* Adjust logo size */
   height: auto;
+  display: inline-block; /* Ensures it aligns properly with flexbox */
 }
 
-/* Menu button styling (aligned to the right) */
+/* Menu button styling */
 .menu-button {
-  background-color: #00BF63;
-  border: none;
+  background: none; /* Remove background for cleaner look */
+  border: none; /* No border */
   color: white;
-  border-radius: 5px;
-  padding: 10px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 10px;
+  border-radius: 5px; /* Rounded edges */
 }
 
 .menu-button svg {
@@ -51,15 +55,15 @@ header {
 }
 
 .menu-button:hover {
-  background-color: #01A254;
+  background-color: rgba(255, 255, 255, 0.1); /* Light hover effect */
 }
 
 /* Dropdown navigation */
 .dropdown {
   display: none; /* Hidden by default */
   position: absolute;
-  top: 100%; /* Place directly below the menu button */
-  right: 0; /* Align to the right edge of the menu button */
+  top: 100%; /* Place directly below the header */
+  right: 20px; /* Align to the right edge of the menu button */
   width: 300px; /* Adjusted width for cleaner appearance */
   max-height: 400px; /* Fixed height */
   overflow-y: auto; /* Add scrolling if content exceeds the height */
@@ -84,7 +88,7 @@ header {
 }
 
 .dropdown a:hover {
-  background-color: #01A254; /* Slightly darker green for hover effect */
+  background-color: rgba(255, 255, 255, 0.1); /* Hover effect */
 }
 
 /* Active menu link */
