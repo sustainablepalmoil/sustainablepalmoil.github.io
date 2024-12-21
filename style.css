@@ -22,6 +22,8 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between; /* Space out logo and menu button */
+  padding: 15px 20px;
+  border-radius: 10px 10px 0 0;
 }
 
 /* Logo styling */
