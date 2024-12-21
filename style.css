@@ -87,6 +87,15 @@ header {
   background-color: #01A254; /* Slightly darker green for hover effect */
 }
 
+/* Active menu link */
+.dropdown a.active {
+  background-color: white;
+  color: #00BF63; /* Forest Green */
+  font-weight: bold;
+  pointer-events: none; /* Disable clicking */
+  border-radius: 5px;
+}
+
 /* Dropdown visibility when active */
 .dropdown.active {
   display: block; /* Make the dropdown visible */
