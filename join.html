@@ -15,11 +15,17 @@
         }
 
         header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             background-color: #00BF63;
             color: white;
             padding: 15px 20px;
-            text-align: center;
             border-radius: 10px 10px 0 0;
+        }
+
+        header .logo {
+            max-height: 50px;
         }
 
         footer {
@@ -93,7 +99,13 @@
 </head>
 <body>
 <header>
-    Menu Button -->
+    <div class="header-container">
+        <!-- Logo with link to homepage -->
+        <a href="index.html">
+            <img src="https://sustainablepalmoil.github.io/palm-eco-logo.png" alt="Palm Eco Logo" class="logo">
+        </a>
+
+        <!-- Menu Button -->
         <button class="menu-button">
             <svg width="24" height="24" viewBox="0 0 24 24">
                 <path fill="white" d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />
@@ -107,7 +119,7 @@
 
 <section>
     <h2>Join Palm Eco Alliance</h2>
-    <p>Join the movement towards a more sustainable future. Apply to become a member of Palm Eco Alliance and gain access to premium markets, advanced farming practices, and the highest standards of sustainability.</p>
+    <p>Apply to become a member of Palm Eco Alliance and gain access to premium markets, advanced farming practices, and the highest standards of sustainability.</p>
     <p><strong>Note:</strong> Fields marked with an asterisk (*) are required. Please provide as much information as possible to assist us in reviewing your application.</p>
 
     <form id="join-form">
