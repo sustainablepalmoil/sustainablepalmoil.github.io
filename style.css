@@ -201,10 +201,13 @@ footer {
 /* Section styling */
 section {
   padding: 20px;
-  margin: 10px;
+  margin: 20px auto;
   background-color: white;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 1200px;
+  box-sizing: border-box;
 }
 
 /* Call-to-action button styling */
