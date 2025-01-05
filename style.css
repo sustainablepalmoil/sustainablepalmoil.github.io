@@ -36,17 +36,26 @@ header {
   display: inline-block; /* Ensures it aligns properly with flexbox */
 }
 
+/* Menu container styling */
+.menu-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  z-index: 301;
+}
+
 /* Menu button styling */
 .menu-button {
-  background: none; /* Remove background for cleaner look */
-  border: none; /* No border */
+  background: none;
+  border: none;
   color: white;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 10px;
-  border-radius: 5px; /* Rounded edges */
+  border-radius: 5px;
+  z-index: 302;
 }
 
 .menu-button svg {
@@ -55,17 +64,17 @@ header {
 }
 
 .menu-button:hover {
-  background-color: rgba(255, 255, 255, 0.1); /* Light hover effect */
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Dropdown navigation */
 .dropdown {
-  display: none; /* Hidden by default */
+  display: none;
   position: absolute;
-  top: 100%; /* Place directly below the header */
-  right: 20px; /* Align to the right edge of the menu button */
-  width: 300px; /* Adjusted width for cleaner appearance */
-  max-height: 400px; /* Fixed height */
+  top: 100%;
+  right: 0;
+  width: 300px;
+  max-height: 400px;
   overflow-y: auto; /* Add scrolling if content exceeds the height */
   background-color: #00BF63; /* Forest Green */
   border-radius: 10px; /* Rounded corners */

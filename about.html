@@ -47,26 +47,30 @@
         <a href="index.html">
             <img src="https://sustainablepalmoil.github.io/palm-eco-logo.png" alt="PalmEco Logo" class="logo">
         </a>
-
-        <!-- Menu Button -->
-        <button class="menu-button">
-            <svg width="24" height="24" viewBox="0 0 24 24">
-                <path fill="white" d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />
-            </svg>
-        </button>
+        
+        <div class="menu-container">
+            <!-- Menu Button -->
+            <button class="menu-button">
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                    <path fill="white" d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />
+                </svg>
+            </button>
+            <!-- Menu content -->
+            <div id="menu">
+                <div class="dropdown">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="certification.html">EcoSawit+ Certification</a>
+                    <a href="membership.html">Membership Benefits</a>
+                    <a href="programmes.html">Our Programmes</a>
+                    <a href="join.html">Join Us</a>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <!-- Dynamic Menu -->
-    <div id="menu"></div>
 </header>
 
 <section>
-   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Palm Eco Alliance</title>
-</head>
-<body>
     <h2>About Palm Eco Alliance</h2>
     <p>At <strong>Palm Eco Alliance</strong>, we are redefining the future of palm oil production by empowering Indonesian farmers to achieve prosperity through sustainability. As a leader in the industry, we are committed to creating lasting value for farmers, the environment, and the global palm oil market.</p>
     
@@ -88,7 +92,6 @@
         <li>Responsible land management that protects biodiversity and promotes environmental stewardship.</li>
         <li>Ensures access to premium markets that value sustainability and traceability.</li>
     </ul>
-</body>
 
     <img src="https://sustainablepalmoil.github.io/palm-eco-green.png" 
          alt="PalmEcoCoop Banner" 
@@ -99,43 +102,29 @@
     <p>&copy; 2024 Palm Eco Alliance. All rights reserved.</p>
 </footer>
 
-<!-- Dynamic Menu Script -->
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        fetch('menu.html')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
+        const menuButton = document.querySelector('.menu-button');
+        const dropdown = document.querySelector('.dropdown');
+
+        if (menuButton && dropdown) {
+            menuButton.addEventListener('click', (event) => {
+                event.stopPropagation();
+                dropdown.classList.toggle('active');
+            });
+
+            document.addEventListener('click', (event) => {
+                if (!dropdown.contains(event.target) && !menuButton.contains(event.target)) {
+                    dropdown.classList.remove('active');
                 }
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById('menu').innerHTML = data;
+            });
 
-                // Add menu dropdown functionality
-                const menuButton = document.querySelector('.menu-button');
-                const dropdown = document.querySelector('.dropdown');
-
-                if (menuButton && dropdown) {
-                    menuButton.addEventListener('click', (event) => {
-                        event.stopPropagation();
-                        dropdown.classList.toggle('active');
-                    });
-
-                    document.addEventListener('click', (event) => {
-                        if (!dropdown.contains(event.target) && !menuButton.contains(event.target)) {
-                            dropdown.classList.remove('active');
-                        }
-                    });
-
-                    document.addEventListener('keydown', (event) => {
-                        if (event.key === 'Escape') {
-                            dropdown.classList.remove('active');
-                        }
-                    });
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape') {
+                    dropdown.classList.remove('active');
                 }
-            })
-            .catch(error => console.error('Error loading menu:', error));
+            });
+        }
     });
 </script>
 </body>

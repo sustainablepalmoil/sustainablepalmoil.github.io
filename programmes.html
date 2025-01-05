@@ -5,57 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programmes – Palm Eco Alliance</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #f3f3f3;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #00BF63;
-            color: white;
-            padding: 15px 20px;
-            text-align: center;
-            border-radius: 10px 10px 0 0;
-        }
-
-        footer {
-            background-color: #00BF63;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            border-radius: 0 0 10px 10px;
-            margin-top: 20px;
-        }
-
-        section {
-            padding: 20px;
-            text-align: center;
-            background-color: #f9f9f9;
-            margin: 20px auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            max-width: 900px;
-        }
-
-        h2, h3 {
-            color: #00BF63;
-        }
-
-        p {
-            text-align: justify;
-            font-size: 1.1em;
-            line-height: 1.6;
-        }
-
-        ul {
-            text-align: justify;
-            margin: 10px 20px;
-        }
-    </style>
 </head>
 <body>
 <header>
@@ -64,17 +13,27 @@
         <a href="index.html">
             <img src="https://sustainablepalmoil.github.io/palm-eco-logo.png" alt="PalmEco Logo" class="logo">
         </a>
-
-        <!-- Menu Button -->
-        <button class="menu-button">
-            <svg width="24" height="24" viewBox="0 0 24 24">
-                <path fill="white" d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />
-            </svg>
-        </button>
+        
+        <div class="menu-container">
+            <!-- Menu Button -->
+            <button class="menu-button">
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                    <path fill="white" d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />
+                </svg>
+            </button>
+            <!-- Menu content -->
+            <div id="menu">
+                <div class="dropdown">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="certification.html">EcoSawit+ Certification</a>
+                    <a href="membership.html">Membership Benefits</a>
+                    <a href="programmes.html">Our Programmes</a>
+                    <a href="join.html">Join Us</a>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <!-- Dynamic Menu -->
-    <div id="menu"></div>
 </header>
 
 <section>
@@ -96,43 +55,29 @@
     <p>&copy; 2024 Palm Eco Alliance. All rights reserved.</p>
 </footer>
 
-<!-- Dynamic Menu Script -->
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        fetch('menu.html')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
+        const menuButton = document.querySelector('.menu-button');
+        const dropdown = document.querySelector('.dropdown');
+
+        if (menuButton && dropdown) {
+            menuButton.addEventListener('click', (event) => {
+                event.stopPropagation();
+                dropdown.classList.toggle('active');
+            });
+
+            document.addEventListener('click', (event) => {
+                if (!dropdown.contains(event.target) && !menuButton.contains(event.target)) {
+                    dropdown.classList.remove('active');
                 }
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById('menu').innerHTML = data;
+            });
 
-                // Menu dropdown functionality
-                const menuButton = document.querySelector('.menu-button');
-                const dropdown = document.querySelector('.dropdown');
-
-                if (menuButton && dropdown) {
-                    menuButton.addEventListener('click', (event) => {
-                        event.stopPropagation();
-                        dropdown.classList.toggle('active');
-                    });
-
-                    document.addEventListener('click', (event) => {
-                        if (!dropdown.contains(event.target) && !menuButton.contains(event.target)) {
-                            dropdown.classList.remove('active');
-                        }
-                    });
-
-                    document.addEventListener('keydown', (event) => {
-                        if (event.key === 'Escape') {
-                            dropdown.classList.remove('active');
-                        }
-                    });
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape') {
+                    dropdown.classList.remove('active');
                 }
-            })
-            .catch(error => console.error('Error loading menu:', error));
+            });
+        }
     });
 </script>
 </body>

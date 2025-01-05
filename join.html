@@ -6,57 +6,6 @@
     <title>Join Us – Palm Eco Alliance</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #f3f3f3;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #00BF63;
-            color: white;
-            padding: 15px 20px;
-            border-radius: 10px 10px 0 0;
-        }
-
-        header .logo {
-            max-height: 120px;
-        }
-
-        footer {
-            background-color: #00BF63;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            border-radius: 0 0 10px 10px;
-            margin-top: 20px;
-        }
-
-        section {
-            padding: 20px;
-            text-align: center;
-            background-color: #f9f9f9;
-            margin: 20px auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            max-width: 900px;
-        }
-
-        h2 {
-            color: #00BF63;
-        }
-
-        p {
-            text-align: justify;
-            font-size: 1.1em;
-            line-height: 1.6;
-        }
-
         form {
             max-width: 800px;
             margin: 0 auto;
@@ -95,10 +44,6 @@
         form button:hover {
             background-color: #01A254;
         }
-       ul {
-            text-align: justify;
-            margin: 10px 20px;
-        }
     </style>
 </head>
 <body>
@@ -108,17 +53,27 @@
         <a href="index.html">
             <img src="https://sustainablepalmoil.github.io/palm-eco-logo.png" alt="PalmEco Logo" class="logo">
         </a>
-
-        <!-- Menu Button -->
-        <button class="menu-button">
-            <svg width="24" height="24" viewBox="0 0 24 24">
-                <path fill="white" d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />
-            </svg>
-        </button>
+        
+        <div class="menu-container">
+            <!-- Menu Button -->
+            <button class="menu-button">
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                    <path fill="white" d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />
+                </svg>
+            </button>
+            <!-- Menu content -->
+            <div id="menu">
+                <div class="dropdown">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="certification.html">EcoSawit+ Certification</a>
+                    <a href="membership.html">Membership Benefits</a>
+                    <a href="programmes.html">Our Programmes</a>
+                    <a href="join.html">Join Us</a>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <!-- Dynamic Menu -->
-    <div id="menu"></div>
 </header>
 
 <section>
@@ -184,23 +139,7 @@
 </footer>
 
 <script>
-// Corrected Dynamic Menu Script with event binding after loading content
 document.addEventListener('DOMContentLoaded', function () {
-    fetch('menu.html')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-            return response.text();
-        })
-        .then(data => {
-            document.getElementById('menu').innerHTML = data;
-            initialiseDropdownMenu(); // Reapply dropdown functionality after loading
-        })
-        .catch(error => console.error('Error loading menu:', error));
-});
-
-function initialiseDropdownMenu() {
     const menuButton = document.querySelector('.menu-button');
     const dropdown = document.querySelector('.dropdown');
 
@@ -221,10 +160,8 @@ function initialiseDropdownMenu() {
                 dropdown.classList.remove('active');
             }
         });
-    } else {
-        console.error('Menu button or dropdown not found after loading menu.html');
     }
-}
+});
 
 // Form Submission Script
 document.getElementById('join-form').addEventListener('submit', async function (event) {
