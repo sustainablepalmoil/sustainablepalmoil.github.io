@@ -404,8 +404,9 @@ section {
 
   .dropdown {
     width: calc(100% - 20px);
-    margin: 8px auto;
     padding: 10px;
+    top: 65px;
+    max-height: calc(100vh - 85px);
   }
 
   .dropdown a {
