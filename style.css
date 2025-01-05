@@ -101,26 +101,39 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 12px;
-  border-radius: 5px;
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
   z-index: 302;
-  margin-right: -8px;
+  margin: 4px;
 }
 
 .menu-button svg {
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
 }
 
 @media (max-width: 768px) {
   .menu-button {
-    padding: 15px;
-    margin-right: -12px;
+    width: 52px;
+    height: 52px;
   }
   
   .menu-button svg {
-    width: 28px;
-    height: 28px;
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-button {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .menu-button svg {
+    width: 32px;
+    height: 32px;
   }
 }
 
