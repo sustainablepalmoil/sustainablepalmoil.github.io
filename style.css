@@ -18,10 +18,12 @@ html, body {
 
 /* Main content container */
 .main-container {
-  width: 900px;
+  width: 100%;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 20px 0;
+  padding: 20px;
   background-color: #ffffff;
+  box-sizing: border-box;
 }
 
 /* Content wrapper to maintain full opacity */
@@ -49,8 +51,11 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 900px;
+  width: 100%;
+  max-width: 900px;
   margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 /* Footer styling */
@@ -65,8 +70,11 @@ footer {
 
 /* Footer content container */
 .footer-content {
-  width: 900px;
+  width: 100%;
+  max-width: 900px;
   margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 /* Logo styling */
@@ -86,21 +94,34 @@ footer {
 
 /* Menu button styling */
 .menu-button {
-  background: none;
+  background: rgba(255, 255, 255, 0.1);
   border: none;
   color: white;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px;
+  padding: 12px;
   border-radius: 5px;
   z-index: 302;
+  margin-right: -8px;
 }
 
 .menu-button svg {
   width: 24px;
   height: 24px;
+}
+
+@media (max-width: 768px) {
+  .menu-button {
+    padding: 15px;
+    margin-right: -12px;
+  }
+  
+  .menu-button svg {
+    width: 28px;
+    height: 28px;
+  }
 }
 
 .menu-button:hover {
@@ -247,23 +268,104 @@ section {
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+  /* Tablet adjustments */
+  .main-container {
+    padding: 15px;
+  }
+  
+  .hero-logo {
+    max-width: 70%;
+  }
+  
+  section {
+    padding: 15px;
+    margin: 8px;
+  }
+}
+
 @media (max-width: 768px) {
+  /* Mobile adjustments */
+  .header-container {
+    padding: 8px 15px;
+  }
+
   .dropdown {
     width: 90%;
     left: 5%;
     right: unset;
+    max-height: 80vh;
+    margin-top: 5px;
   }
 
   .cta-button {
     width: 90%;
-    margin: 0 auto;
+    margin: 10px auto;
+    padding: 12px 20px;
   }
 
   .flowchart {
     padding: 10px;
+    margin: 10px;
   }
 
   .node {
     max-width: 100%;
+    padding: 12px;
+    font-size: 13px;
+  }
+
+  #hero {
+    padding: 20px;
+  }
+
+  #hero h1 {
+    font-size: 1.8em;
+  }
+
+  #hero p {
+    font-size: 1em;
+  }
+
+  .hero-logo {
+    max-width: 80%;
+  }
+
+  section {
+    padding: 12px;
+    margin: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Small mobile adjustments */
+  .main-container {
+    padding: 10px;
+  }
+
+  .header-container {
+    padding: 0 10px;
+  }
+
+  .logo {
+    max-width: 120px;
+  }
+
+  #hero h1 {
+    font-size: 1.6em;
+  }
+
+  .hero-logo {
+    max-width: 90%;
+  }
+
+  .dropdown {
+    width: 95%;
+    left: 2.5%;
+  }
+
+  section {
+    padding: 10px;
+    margin: 5px;
   }
 }
