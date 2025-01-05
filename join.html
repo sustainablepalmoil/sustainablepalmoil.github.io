@@ -47,96 +47,100 @@
     </style>
 </head>
 <body>
-<header>
-    <div class="header-container">
-        <!-- Logo with link to homepage -->
-        <a href="index.html">
-            <img src="https://sustainablepalmoil.github.io/palm-eco-logo.png" alt="PalmEco Logo" class="logo">
-        </a>
-        
-        <div class="menu-container">
-            <!-- Menu Button -->
-            <button class="menu-button">
-                <svg width="24" height="24" viewBox="0 0 24 24">
-                    <path fill="white" d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />
-                </svg>
-            </button>
-            <!-- Menu content -->
-            <div id="menu">
-                <div class="dropdown">
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About Us</a>
-                    <a href="certification.html">EcoSawit+ Certification</a>
-                    <a href="membership.html">Membership Benefits</a>
-                    <a href="programmes.html">Our Programmes</a>
-                    <a href="join.html">Join Us</a>
+<div class="container">
+    <header>
+        <div class="header-container">
+            <!-- Logo with link to homepage -->
+            <a href="index.html">
+                <img src="https://sustainablepalmoil.github.io/palm-eco-logo.png" alt="PalmEco Logo" class="logo">
+            </a>
+            
+            <div class="menu-container">
+                <!-- Menu Button -->
+                <button class="menu-button">
+                    <svg width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="white" d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />
+                    </svg>
+                </button>
+                <!-- Menu content -->
+                <div id="menu">
+                    <div class="dropdown">
+                        <a href="index.html">Home</a>
+                        <a href="about.html">About Us</a>
+                        <a href="certification.html">EcoSawit+ Certification</a>
+                        <a href="membership.html">Membership Benefits</a>
+                        <a href="programmes.html">Our Programmes</a>
+                        <a href="join.html">Join Us</a>
+                    </div>
                 </div>
             </div>
         </div>
+    </header>
+
+    <div class="main-container">
+        <section>
+            <h2>Join Palm Eco Alliance</h2>
+            <p>Apply to become a member of Palm Eco Alliance and gain access to premium markets, advanced farming practices, and the highest standards of sustainability.</p>
+            <p><strong>Note:</strong> Fields marked with an asterisk (*) are required. Please provide as much information as possible to assist us in reviewing your application.</p>
+
+            <form id="join-form">
+                <label for="name">* Full Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="phone">* Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="email">* Email Address:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="address">* Residential Address:</label>
+                <input type="text" id="address" name="address" required>
+
+                <label for="farmer_id">* Unique Farmer ID:</label>
+                <input type="text" id="farmer_id" name="farmer_id" required>
+
+                <label for="farm_address">* Farm Address:</label>
+                <input type="text" id="farm_address" name="farm_address" required>
+
+                <label for="coordinates">Farm Coordinates (Latitude, Longitude):</label>
+                <input type="text" id="coordinates" name="coordinates" placeholder="e.g., -1.234, 116.567">
+
+                <label for="farm_size">Farm Size (in hectares):</label>
+                <input type="number" id="farm_size" name="farm_size" step="0.01">
+
+                <label for="farm_type">* Type of Farm:</label>
+                <select id="farm_type" name="farm_type" required>
+                    <option value="independent">Independent Farmer</option>
+                    <option value="estate">Estate</option>
+                    <option value="agent">Agent</option>
+                </select>
+
+                <label for="palm_variety">Palm Variety:</label>
+                <input type="text" id="palm_variety" name="palm_variety">
+
+                <label for="certification">Certification Status:</label>
+                <select id="certification" name="certification">
+                    <option value="none">None</option>
+                    <option value="rspo">RSPO</option>
+                    <option value="ispo">ISPO</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <label for="production_volume">Estimated Production Volume (kg/month):</label>
+                <input type="number" id="production_volume" name="production_volume">
+
+                <label for="years_of_operation">Years of Operation:</label>
+                <input type="number" id="years_of_operation" name="years_of_operation">
+
+                <button type="submit">Submit Application</button>
+            </form>
+        </section>
     </div>
-</header>
 
-<section>
-    <h2>Join Palm Eco Alliance</h2>
-    <p>Apply to become a member of Palm Eco Alliance and gain access to premium markets, advanced farming practices, and the highest standards of sustainability.</p>
-    <p><strong>Note:</strong> Fields marked with an asterisk (*) are required. Please provide as much information as possible to assist us in reviewing your application.</p>
-
-    <form id="join-form">
-        <label for="name">* Full Name:</label>
-        <input type="text" id="name" name="name" required>
-
-        <label for="phone">* Phone Number:</label>
-        <input type="tel" id="phone" name="phone" required>
-
-        <label for="email">* Email Address:</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="address">* Residential Address:</label>
-        <input type="text" id="address" name="address" required>
-
-        <label for="farmer_id">* Unique Farmer ID:</label>
-        <input type="text" id="farmer_id" name="farmer_id" required>
-
-        <label for="farm_address">* Farm Address:</label>
-        <input type="text" id="farm_address" name="farm_address" required>
-
-        <label for="coordinates">Farm Coordinates (Latitude, Longitude):</label>
-        <input type="text" id="coordinates" name="coordinates" placeholder="e.g., -1.234, 116.567">
-
-        <label for="farm_size">Farm Size (in hectares):</label>
-        <input type="number" id="farm_size" name="farm_size" step="0.01">
-
-        <label for="farm_type">* Type of Farm:</label>
-        <select id="farm_type" name="farm_type" required>
-            <option value="independent">Independent Farmer</option>
-            <option value="estate">Estate</option>
-            <option value="agent">Agent</option>
-        </select>
-
-        <label for="palm_variety">Palm Variety:</label>
-        <input type="text" id="palm_variety" name="palm_variety">
-
-        <label for="certification">Certification Status:</label>
-        <select id="certification" name="certification">
-            <option value="none">None</option>
-            <option value="rspo">RSPO</option>
-            <option value="ispo">ISPO</option>
-            <option value="other">Other</option>
-        </select>
-
-        <label for="production_volume">Estimated Production Volume (kg/month):</label>
-        <input type="number" id="production_volume" name="production_volume">
-
-        <label for="years_of_operation">Years of Operation:</label>
-        <input type="number" id="years_of_operation" name="years_of_operation">
-
-        <button type="submit">Submit Application</button>
-    </form>
-</section>
-
-<footer>
-    <p>&copy; 2024 Palm Eco Alliance. All rights reserved.</p>
-</footer>
+    <footer>
+        <p>&copy; 2024 Palm Eco Alliance. All rights reserved.</p>
+    </footer>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
