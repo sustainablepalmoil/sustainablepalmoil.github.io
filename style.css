@@ -319,11 +319,11 @@ section {
   }
 
   .dropdown {
-    width: 94%;
-    left: 3%;
-    right: unset;
+    width: calc(100% - 24px);
+    left: 0;
+    right: 0;
     max-height: 85vh;
-    margin-top: 8px;
+    margin: 8px auto;
     padding: 12px;
   }
 
@@ -401,8 +401,8 @@ section {
   }
 
   .dropdown {
-    width: 96%;
-    left: 2%;
+    width: calc(100% - 20px);
+    margin: 8px auto;
     padding: 10px;
   }
 
