@@ -33,7 +33,14 @@
                 </svg>
             </button>
             <!-- Menu content -->
-            <div id="menu"></div>
+            <div class="dropdown">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="certification.html">EcoSawit+ Certification</a>
+                <a href="membership.html">Membership Benefits</a>
+                <a href="programmes.html">Our Programmes</a>
+                <a href="join.html">Join Us</a>
+            </div>
         </div>
     </div>
 </header>
@@ -55,6 +62,39 @@
 </footer>
 
 <!-- JavaScript -->
-<script src="script.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuButton = document.querySelector('.menu-button');
+        const dropdown = document.querySelector('.dropdown');
+
+        if (menuButton && dropdown) {
+            menuButton.addEventListener('click', (event) => {
+                event.stopPropagation();
+                dropdown.classList.toggle('active');
+            });
+
+            document.addEventListener('click', (event) => {
+                if (!dropdown.contains(event.target) && !menuButton.contains(event.target)) {
+                    dropdown.classList.remove('active');
+                }
+            });
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape') {
+                    dropdown.classList.remove('active');
+                }
+            });
+
+            // Highlight active menu item
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const links = document.querySelectorAll('.dropdown a');
+            links.forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        }
+    });
+</script>
 </body>
 </html>
