@@ -319,11 +319,13 @@ section {
   }
 
   .dropdown {
+    position: fixed;
     width: calc(100% - 24px);
-    left: 0;
-    right: 0;
-    max-height: 85vh;
-    margin: 8px auto;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 70px;
+    max-height: calc(100vh - 90px);
+    margin: 0;
     padding: 12px;
   }
 
