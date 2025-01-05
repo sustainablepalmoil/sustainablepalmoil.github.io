@@ -12,8 +12,8 @@ html, body {
 /* Container styling */
 .container {
   width: 100%;
-  margin: 0 auto;
-  background-color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  padding: 0;
 }
 
 /* Main content container */
@@ -21,6 +21,7 @@ html, body {
   width: 900px;
   margin: 0 auto;
   padding: 20px 0;
+  background-color: #ffffff;
 }
 
 /* Content wrapper to maintain full opacity */
@@ -32,29 +33,47 @@ html, body {
 /* Header styling */
 header {
   display: flex;
-  justify-content: space-between; /* Space out logo and menu button */
-  align-items: center; /* Centre items vertically */
-  background-color: #00BF63; /* Forest Green */
+  justify-content: space-between;
+  align-items: center;
+  background-color: #00BF63;
   color: white;
   padding: 10px 20px;
   position: relative;
-  z-index: 200; /* Keep header above other elements */
-  border-radius: 10px 10px 0 0; /* Rounded top corners */
+  z-index: 200;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Header container layout */
 .header-container {
   display: flex;
-  justify-content: space-between; /* Logo on left, menu button on right */
+  justify-content: space-between;
   align-items: center;
-  width: 100%; /* Ensure the container spans the full width */
+  width: 900px;
+  margin: 0 auto;
+}
+
+/* Footer styling */
+footer {
+  width: 100%;
+  background-color: #00BF63;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Footer content container */
+.footer-content {
+  width: 900px;
+  margin: 0 auto;
 }
 
 /* Logo styling */
 .logo {
-  max-width: 150px; /* Adjust logo size */
+  max-width: 150px;
   height: auto;
-  display: inline-block; /* Ensures it aligns properly with flexbox */
+  display: inline-block;
 }
 
 /* Menu container styling */
@@ -96,13 +115,13 @@ header {
   right: 0;
   width: 300px;
   max-height: 400px;
-  overflow-y: auto; /* Add scrolling if content exceeds the height */
-  background-color: #00BF63; /* Forest Green */
-  border-radius: 10px; /* Rounded corners */
-  padding: 10px; /* Add padding inside the dropdown */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for better visibility */
-  z-index: 300; /* Ensure the dropdown is above other elements */
-  text-align: left; /* Align content to the left */
+  overflow-y: auto;
+  background-color: #00BF63;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 300;
+  text-align: left;
 }
 
 /* Dropdown links styling */
@@ -111,28 +130,28 @@ header {
   padding: 10px 15px;
   color: white;
   text-decoration: none;
-  font-size: 1em; /* Adjust font size */
+  font-size: 1em;
   font-weight: bold;
-  margin-bottom: 5px; /* Add space between links */
+  margin-bottom: 5px;
   border-radius: 5px;
 }
 
 .dropdown a:hover {
-  background-color: rgba(255, 255, 255, 0.1); /* Hover effect */
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Active menu link */
 .dropdown a.active {
   background-color: white;
-  color: #00BF63; /* Forest Green */
+  color: #00BF63;
   font-weight: bold;
-  pointer-events: none; /* Disable clicking */
+  pointer-events: none;
   border-radius: 5px;
 }
 
 /* Dropdown visibility when active */
 .dropdown.active {
-  display: block; /* Make the dropdown visible */
+  display: block;
 }
 
 /* Section styling */
@@ -146,7 +165,7 @@ section {
 
 /* Call-to-action button styling */
 .cta-button {
-  background-color: #00BF63; /* Forest Green */
+  background-color: #00BF63;
   color: white;
   padding: 15px 30px;
   text-decoration: none;
@@ -154,13 +173,13 @@ section {
   border-radius: 5px;
   display: inline-block;
   margin-top: 20px;
-  max-width: 100%; /* Prevents overflow */
+  max-width: 100%;
   text-align: center;
-  box-sizing: border-box; /* Includes padding in width calculations */
+  box-sizing: border-box;
 }
 
 .cta-button:hover {
-  background-color: #01A254; /* Slightly darker Forest Green for hover effect */
+  background-color: #01A254;
 }
 
 /* Hero section styling */
@@ -173,7 +192,7 @@ section {
 
 #hero h1 {
   font-size: 2em;
-  color: #01A254; /* Forest Green */
+  color: #01A254;
   margin-bottom: 10px;
 }
 
@@ -187,7 +206,7 @@ section {
   margin: 15px 0;
 }
 
-/* Responsive adjustments for images (e.g., Hero logo) */
+/* Responsive adjustments for images */
 .hero-logo {
   display: block;
   margin: 20px auto;
@@ -230,14 +249,14 @@ section {
 /* Responsive Design */
 @media (max-width: 768px) {
   .dropdown {
-    width: 90%; /* Adjust dropdown width for smaller screens */
-    left: 5%; /* Centre dropdown on mobile devices */
+    width: 90%;
+    left: 5%;
     right: unset;
   }
 
   .cta-button {
-    width: 90%; /* Adjust button width for mobile */
-    margin: 0 auto; /* Centre the button */
+    width: 90%;
+    margin: 0 auto;
   }
 
   .flowchart {
