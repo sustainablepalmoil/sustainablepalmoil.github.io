@@ -90,44 +90,56 @@ footer {
   display: flex;
   align-items: center;
   z-index: 301;
+  padding: 0;
+  margin: 0;
 }
 
 /* Menu button styling */
 .menu-button {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.2);
   border: none;
   color: white;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 8px;
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
   z-index: 302;
-  padding: 12px;
-  margin: 4px;
+  padding: 0;
+  margin: 0;
   touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color 0.2s ease;
 }
 
 .menu-button svg {
-  width: 24px;
-  height: 24px;
+  width: 30px;
+  height: 30px;
 }
 
 @media (max-width: 768px) {
   .menu-button {
-    width: 44px;
-    height: 44px;
-    padding: 10px;
+    width: 46px;
+    height: 46px;
+  }
+  
+  .menu-button svg {
+    width: 28px;
+    height: 28px;
   }
 }
 
 @media (max-width: 480px) {
   .menu-button {
-    width: 40px;
-    height: 40px;
-    padding: 8px;
+    width: 42px;
+    height: 42px;
+  }
+  
+  .menu-button svg {
+    width: 26px;
+    height: 26px;
   }
 }
 
