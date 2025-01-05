@@ -101,47 +101,41 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 56px;
-  height: 56px;
+  width: 48px;
+  height: 48px;
   border-radius: 8px;
   z-index: 302;
   margin: 4px;
 }
 
 .menu-button svg {
-  min-width: 32px;
-  min-height: 32px;
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
 }
 
 @media (max-width: 768px) {
   .menu-button {
-    width: 52px;
-    height: 52px;
-    padding: 10px;
+    width: 44px;
+    height: 44px;
+    padding: 8px;
   }
   
   .menu-button svg {
-    min-width: 36px;
-    min-height: 36px;
-    width: 36px;
-    height: 36px;
+    width: 24px;
+    height: 24px;
   }
 }
 
 @media (max-width: 480px) {
   .menu-button {
-    width: 48px;
-    height: 48px;
-    padding: 8px;
+    width: 40px;
+    height: 40px;
+    padding: 6px;
   }
   
   .menu-button svg {
-    min-width: 32px;
-    min-height: 32px;
-    width: 32px;
-    height: 32px;
+    width: 22px;
+    height: 22px;
   }
 }
 

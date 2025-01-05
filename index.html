@@ -33,16 +33,7 @@
                 </svg>
             </button>
             <!-- Menu content -->
-            <div id="menu">
-                <div class="dropdown">
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About Us</a>
-                    <a href="certification.html">EcoSawit+ Certification</a>
-                    <a href="membership.html">Membership Benefits</a>
-                    <a href="programmes.html">Our Programmes</a>
-                    <a href="join.html">Join Us</a>
-                </div>
-            </div>
+            <div id="menu"></div>
         </div>
     </div>
 </header>
@@ -64,30 +55,6 @@
 </footer>
 
 <!-- JavaScript -->
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const menuButton = document.querySelector('.menu-button');
-        const dropdown = document.querySelector('.dropdown');
-
-        if (menuButton && dropdown) {
-            menuButton.addEventListener('click', (event) => {
-                event.stopPropagation();
-                dropdown.classList.toggle('active');
-            });
-
-            document.addEventListener('click', (event) => {
-                if (!dropdown.contains(event.target) && !menuButton.contains(event.target)) {
-                    dropdown.classList.remove('active');
-                }
-            });
-
-            document.addEventListener('keydown', (event) => {
-                if (event.key === 'Escape') {
-                    dropdown.classList.remove('active');
-                }
-            });
-        }
-    });
-</script>
+<script src="script.js"></script>
 </body>
 </html>
