@@ -18,8 +18,8 @@ html, body {
 
 /* Main content container */
 .main-container {
-  width: 100%;
-  max-width: 900px;
+  width: 90%;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
   background-color: #ffffff;
@@ -51,8 +51,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  max-width: 900px;
+  width: 90%;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
   box-sizing: border-box;
@@ -70,8 +70,8 @@ footer {
 
 /* Footer content container */
 .footer-content {
-  width: 100%;
-  max-width: 900px;
+  width: 90%;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
   box-sizing: border-box;
@@ -293,6 +293,7 @@ section {
 @media (max-width: 1024px) {
   /* Tablet adjustments */
   .main-container {
+    width: 95%;
     padding: 15px;
   }
   
@@ -374,6 +375,7 @@ section {
 @media (max-width: 480px) {
   /* Small mobile adjustments */
   .main-container {
+    width: 98%;
     padding: 10px;
   }
 
