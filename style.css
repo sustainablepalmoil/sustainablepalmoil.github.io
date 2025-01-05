@@ -135,11 +135,11 @@ footer {
   top: 100%;
   right: 0;
   width: 300px;
-  max-height: 400px;
+  max-height: 80vh;
   overflow-y: auto;
   background-color: #00BF63;
   border-radius: 10px;
-  padding: 10px;
+  padding: 15px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   z-index: 300;
   text-align: left;
@@ -148,13 +148,14 @@ footer {
 /* Dropdown links styling */
 .dropdown a {
   display: block;
-  padding: 10px 15px;
+  padding: 15px;
   color: white;
   text-decoration: none;
-  font-size: 1em;
+  font-size: 1.1em;
   font-weight: bold;
-  margin-bottom: 5px;
-  border-radius: 5px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
 }
 
 .dropdown a:hover {
@@ -291,11 +292,23 @@ section {
   }
 
   .dropdown {
-    width: 90%;
-    left: 5%;
+    width: 94%;
+    left: 3%;
     right: unset;
-    max-height: 80vh;
-    margin-top: 5px;
+    max-height: 85vh;
+    margin-top: 8px;
+    padding: 12px;
+  }
+
+  .dropdown a {
+    padding: 16px;
+    margin-bottom: 10px;
+    font-size: 1.15em;
+    text-align: center;
+  }
+
+  .dropdown a:last-child {
+    margin-bottom: 5px;
   }
 
   .cta-button {
@@ -360,8 +373,15 @@ section {
   }
 
   .dropdown {
-    width: 95%;
-    left: 2.5%;
+    width: 96%;
+    left: 2%;
+    padding: 10px;
+  }
+
+  .dropdown a {
+    padding: 14px;
+    margin-bottom: 8px;
+    font-size: 1.1em;
   }
 
   section {
