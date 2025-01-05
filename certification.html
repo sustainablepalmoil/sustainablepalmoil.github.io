@@ -6,82 +6,12 @@
     <title>EcoSawit+ Certification Booklet</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
     <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
             background-image: url('cert-background.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
-            min-height: 100%;
-            height: auto;
-            position: relative;
-        }
-
-        .container {
-            margin-top: 50px;
-            padding: 20px;
-            margin: 20px auto;
-            max-width: 900px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        header {
-            background-color: #00BF63;
-            color: white;
-            padding: 15px 20px;
-            text-align: center;
-            border-radius: 10px 10px 0 0;
-        }
-
-        footer {
-            background-color: #00BF63;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            border-radius: 0 0 10px 10px;
-            margin-top: 20px;
-        }
-
-        h1, h2, h3 {
-            color: #00BF63;
-        }
-
-        p {
-            text-align: justify;
-            margin-bottom: 15px;
-        }
-
-        .flowchart {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: transparent;
-            border-radius: 10px;
-        }
-
-        .node {
-            text-align: center;
-            background-color: #00BF63;
-            color: white;
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 5px;
-            width: 80%;
-            max-width: 400px;
-            font-weight: bold;
-            font-size: 14px;
         }
 
         .highlighted-node {
@@ -99,17 +29,6 @@
             margin: 20px 0;
         }
 
-        .arrow {
-            color: #333;
-            font-size: 24px;
-            margin: 5px 0;
-        }
-
-        ul {
-            list-style-type: disc;
-            margin: 10px 20px;
-        }
-
         .form-step {
             margin-bottom: 15px;
             font-size: 1em;
@@ -119,71 +38,72 @@
 </head>
 <body>
     <header>
-    <div class="header-container">
-        <!-- Logo with link to homepage -->
-        <a href="index.html">
-            <img src="https://sustainablepalmoil.github.io/palm-eco-logo.png" alt="PalmEco Logo" class="logo">
-        </a>
-        
-        <div class="menu-container">
-            <!-- Menu Button -->
-            <button class="menu-button">
-                <svg viewBox="0 0 24 24">
-                    <path fill="white" d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />
-                </svg>
-            </button>
-            <!-- Menu content -->
-            <div id="menu">
-                <div class="dropdown">
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About Us</a>
-                    <a href="certification.html">EcoSawit+ Certification</a>
-                    <a href="membership.html">Membership Benefits</a>
-                    <a href="programmes.html">Our Programmes</a>
-                    <a href="join.html">Join Us</a>
+        <div class="header-container">
+            <a href="index.html">
+                <img src="https://sustainablepalmoil.github.io/palm-eco-logo.png" alt="PalmEco Logo" class="logo">
+            </a>
+            
+            <div class="menu-container">
+                <button class="menu-button">
+                    <svg viewBox="0 0 24 24">
+                        <path fill="white" d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />
+                    </svg>
+                </button>
+                <div id="menu">
+                    <div class="dropdown">
+                        <a href="index.html">Home</a>
+                        <a href="about.html">About Us</a>
+                        <a href="certification.html">EcoSawit+ Certification</a>
+                        <a href="membership.html">Membership Benefits</a>
+                        <a href="programmes.html">Our Programmes</a>
+                        <a href="join.html">Join Us</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</header>
+    </header>
 
     <div class="container">
-        <h2>About EcoSawit+</h2>
-        <p>The EcoSawit+ Certification represents the gold standard in sustainable palm oil production. It aligns with global benchmarks, such as the EU Deforestation Regulation (EUDR), empowering Indonesian farmers while ensuring the highest levels of environmental stewardship and traceability.</p>
+        <div class="main-container">
+            <h2>About EcoSawit+</h2>
+            <p>The EcoSawit+ Certification represents the gold standard in sustainable palm oil production. It aligns with global benchmarks, such as the EU Deforestation Regulation (EUDR), empowering Indonesian farmers while ensuring the highest levels of environmental stewardship and traceability.</p>
 
-        <h3>Key Benefits</h3>
-        <ul>
-            <li><strong>Global Compliance:</strong> Meets stringent international sustainability standards.</li>
-            <li><strong>Enhanced Transparency:</strong> Leverages blockchain and satellite monitoring for full traceability.</li>
-            <li><strong>Farmer Empowerment:</strong> Provides training, resources, and incentives for sustainable practices.</li>
-        <li><strong>Eco-Restoration:</strong> Focuses on biodiversity improvement and carbon sequestration.</li>
-    </ul>
+            <h3>Key Benefits</h3>
+            <ul>
+                <li><strong>Global Compliance:</strong> Meets stringent international sustainability standards.</li>
+                <li><strong>Enhanced Transparency:</strong> Leverages blockchain and satellite monitoring for full traceability.</li>
+                <li><strong>Farmer Empowerment:</strong> Provides training, resources, and incentives for sustainable practices.</li>
+                <li><strong>Eco-Restoration:</strong> Focuses on biodiversity improvement and carbon sequestration.</li>
+            </ul>
 
-    <h3>Guidance Brochure</h3>
-    <a href="ecosawit-plus-guidance.pdf">
-        <img src="guidance-brochure-thumbnail.png" alt="EcoSawit+ Guidance Brochure" style="display: block; width: 350px; margin: 20px auto; box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.3);">
-    </a>
+            <h3>Guidance Brochure</h3>
+            <a href="ecosawit-plus-guidance.pdf">
+                <img src="guidance-brochure-thumbnail.png" alt="EcoSawit+ Guidance Brochure" style="display: block; width: 350px; margin: 20px auto; box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.3);">
+            </a>
 
-        <h3>Certification Process</h3>
-        <div class="flowchart">
-            <div class="node">1. Pre-Application Phase<br><span class="form-step">Farmers fill out Form I (Basic Information) and Form II (Eligibility Checklist).</span><br><strong>Authority:</strong> EcoSawit+ Registration Desk</div>
-            <div class="arrow">↓</div>
-            <div class="node">2. On-the-Ground GIS Assessment<br><span class="form-step">EcoSawit+ Field Officer collects and verifies land data.</span><br><strong>Authority:</strong> EcoSawit+ Field Team</div>
-            <div class="arrow">↓</div>
-            <div class="node">3. Satellite Verification<br><span class="form-step">Cross-check submitted data with satellite imagery.</span><br><strong>Authority:</strong> EcoSawit+ Compliance Team</div>
-            <div class="arrow">↓</div>
-            <div class="node">4. Audit and Reporting<br><span class="form-step">Farmers receive the audit report with recommendations.</span><br><strong>Authority:</strong> EcoSawit+ Auditors</div>
-            <div class="arrow">↓</div>
-            <div class="highlighted-node">5.<br>EcoSawit+ Certificate Granted subject to Independent Board Approval</div>
-            <div class="arrow">↓</div>
-            <div class="node">6. Market Access<br><span class="form-step">Farmers use EcoSawit+ Label and connect with buyers.</span><br><strong>Authority:</strong> EcoSawit+ Marketing Team</div>
-            <div class="arrow">↓</div>
-            <div class="node">7. Continuous Monitoring<br><span class="form-step">Annual updates and reassessments every two years.</span><br><strong>Authority:</strong> EcoSawit+ Monitoring Unit</div>
+            <h3>Certification Process</h3>
+            <div class="flowchart">
+                <div class="node">1. Pre-Application Phase<br><span class="form-step">Farmers fill out Form I (Basic Information) and Form II (Eligibility Checklist).</span><br><strong>Authority:</strong> EcoSawit+ Registration Desk</div>
+                <div class="arrow">↓</div>
+                <div class="node">2. On-the-Ground GIS Assessment<br><span class="form-step">EcoSawit+ Field Officer collects and verifies land data.</span><br><strong>Authority:</strong> EcoSawit+ Field Team</div>
+                <div class="arrow">↓</div>
+                <div class="node">3. Satellite Verification<br><span class="form-step">Cross-check submitted data with satellite imagery.</span><br><strong>Authority:</strong> EcoSawit+ Compliance Team</div>
+                <div class="arrow">↓</div>
+                <div class="node">4. Audit and Reporting<br><span class="form-step">Farmers receive the audit report with recommendations.</span><br><strong>Authority:</strong> EcoSawit+ Auditors</div>
+                <div class="arrow">↓</div>
+                <div class="highlighted-node">5.<br>EcoSawit+ Certificate Granted subject to Independent Board Approval</div>
+                <div class="arrow">↓</div>
+                <div class="node">6. Market Access<br><span class="form-step">Farmers use EcoSawit+ Label and connect with buyers.</span><br><strong>Authority:</strong> EcoSawit+ Marketing Team</div>
+                <div class="arrow">↓</div>
+                <div class="node">7. Continuous Monitoring<br><span class="form-step">Annual updates and reassessments every two years.</span><br><strong>Authority:</strong> EcoSawit+ Monitoring Unit</div>
+            </div>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2024 Palm Eco Alliance. All rights reserved.</p>
+        <div class="footer-content">
+            <p>&copy; 2024 Palm Eco Alliance. All rights reserved.</p>
+        </div>
     </footer>
 
     <script>
