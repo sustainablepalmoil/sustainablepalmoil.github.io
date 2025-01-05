@@ -32,8 +32,7 @@
                     <path fill="white" d="M6 12h36v4H6v-4zm0 10h36v4H6v-4zm0 10h36v4H6v-4z" />
                 </svg>
             </button>
-            <!-- Menu content -->
-            <div class="dropdown">
+            <div class="dropdown" id="dropdown">
                 <a href="index.html">Home</a>
                 <a href="about.html">About Us</a>
                 <a href="certification.html">EcoSawit+ Certification</a>
@@ -65,21 +64,25 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const menuButton = document.querySelector('.menu-button');
-        const dropdown = document.querySelector('.dropdown');
+        const dropdown = document.getElementById('dropdown');
+        console.log('Menu button:', menuButton);
+        console.log('Dropdown:', dropdown);
 
         if (menuButton && dropdown) {
-            menuButton.addEventListener('click', (event) => {
+            menuButton.addEventListener('click', function(event) {
+                console.log('Menu button clicked');
+                event.preventDefault();
                 event.stopPropagation();
                 dropdown.classList.toggle('active');
             });
 
-            document.addEventListener('click', (event) => {
+            document.addEventListener('click', function(event) {
                 if (!dropdown.contains(event.target) && !menuButton.contains(event.target)) {
                     dropdown.classList.remove('active');
                 }
             });
 
-            document.addEventListener('keydown', (event) => {
+            document.addEventListener('keydown', function(event) {
                 if (event.key === 'Escape') {
                     dropdown.classList.remove('active');
                 }
@@ -87,7 +90,7 @@
 
             // Highlight active menu item
             const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-            const links = document.querySelectorAll('.dropdown a');
+            const links = dropdown.querySelectorAll('a');
             links.forEach(link => {
                 if (link.getAttribute('href') === currentPage) {
                     link.classList.add('active');
