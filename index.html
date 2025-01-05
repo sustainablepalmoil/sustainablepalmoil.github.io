@@ -62,42 +62,54 @@
 
 <!-- JavaScript -->
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const menuButton = document.querySelector('.menu-button');
-        const dropdown = document.getElementById('dropdown');
-        console.log('Menu button:', menuButton);
-        console.log('Dropdown:', dropdown);
-
-        if (menuButton && dropdown) {
-            menuButton.addEventListener('click', function(event) {
-                console.log('Menu button clicked');
-                event.preventDefault();
-                event.stopPropagation();
-                dropdown.classList.toggle('active');
-            });
-
-            document.addEventListener('click', function(event) {
-                if (!dropdown.contains(event.target) && !menuButton.contains(event.target)) {
-                    dropdown.classList.remove('active');
-                }
-            });
-
-            document.addEventListener('keydown', function(event) {
-                if (event.key === 'Escape') {
-                    dropdown.classList.remove('active');
-                }
-            });
-
-            // Highlight active menu item
-            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-            const links = dropdown.querySelectorAll('a');
-            links.forEach(link => {
-                if (link.getAttribute('href') === currentPage) {
-                    link.classList.add('active');
-                }
-            });
+    window.onload = function() {
+        console.log('Window loaded');
+        var menuButton = document.querySelector('.menu-button');
+        var dropdown = document.getElementById('dropdown');
+        
+        console.log('Initial elements:', { menuButton, dropdown });
+        
+        function toggleMenu(e) {
+            console.log('Toggle menu called');
+            e.preventDefault();
+            e.stopPropagation();
+            if (dropdown.classList.contains('active')) {
+                console.log('Closing menu');
+                dropdown.classList.remove('active');
+            } else {
+                console.log('Opening menu');
+                dropdown.classList.add('active');
+            }
         }
-    });
+
+        if (menuButton) {
+            console.log('Adding click listener to menu button');
+            menuButton.onclick = toggleMenu;
+        }
+
+        // Close menu when clicking outside
+        document.onclick = function(e) {
+            if (!dropdown.contains(e.target) && !menuButton.contains(e.target)) {
+                dropdown.classList.remove('active');
+            }
+        };
+
+        // Close menu on escape key
+        document.onkeydown = function(e) {
+            if (e.key === 'Escape') {
+                dropdown.classList.remove('active');
+            }
+        };
+
+        // Highlight active page
+        var currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        var links = dropdown.getElementsByTagName('a');
+        for (var i = 0; i < links.length; i++) {
+            if (links[i].getAttribute('href') === currentPage) {
+                links[i].classList.add('active');
+            }
+        }
+    };
 </script>
 </body>
 </html>
