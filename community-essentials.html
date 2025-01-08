@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Essentials Support Program – Palm Eco Alliance</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html">
+                <img src="https://sustainablepalmoil.github.io/palm-eco-logo.png" alt="PalmEco Logo" class="logo">
+            </a>
+            
+            <div class="menu-container">
+                <button class="menu-button">
+                    <svg viewBox="0 0 24 24">
+                        <path fill="white" d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />
+                    </svg>
+                </button>
+                <div id="menu">
+                    <div class="dropdown">
+                        <a href="index.html">Home</a>
+                        <a href="about.html">About Us</a>
+                        <a href="certification.html">EcoSawit+ Certification</a>
+                        <a href="membership.html">Membership Benefits</a>
+                        <a href="programmes.html">Our Programmes</a>
+                        <a href="join.html">Join Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <section>
+            <h2>Community Essentials Support Program</h2>
+            <p>As part of our commitment to supporting sustainable palm oil production and enhancing the well-being of our member communities, Palm Eco Alliance is pleased to introduce the Community Essentials Support Program. This initiative aims to provide members in remote areas with essential household items and commodities, ensuring improved living standards and operational efficiency.</p>
+
+            <h3>Program Highlights</h3>
+            <h4>Essential Supplies Provision</h4>
+            <p>Members will receive periodic shipments of vital household items, including:</p>
+            <ul>
+                <li><strong>Food Staples:</strong> Rice, dried noodles, cooking oil, canned fish, and basic seasonings.</li>
+                <li><strong>Hygiene Products:</strong> Soap, toothpaste, shampoo, and laundry detergent.</li>
+                <li><strong>Household Utilities:</strong> Cookware, reusable containers, and cleaning supplies.</li>
+                <li><strong>Lighting Solutions:</strong> Solar-powered lamps and batteries to ensure reliable lighting.</li>
+            </ul>
+
+            <h4>Capacity Building</h4>
+            <p>Training sessions on effective utilization and maintenance of provided items, promoting self-sufficiency and resource management.</p>
+
+            <h4>Community Engagement</h4>
+            <p>Opportunities to participate in decision-making processes regarding the selection and distribution of supplies, ensuring that the program meets the specific needs of each community.</p>
+
+            <h3>Benefits to Members</h3>
+            <ul>
+                <li><strong>Enhanced Quality of Life:</strong> Access to essential commodities improves daily living conditions, health, and well-being.</li>
+                <li><strong>Operational Efficiency:</strong> Reliable access to necessary supplies enables members to focus more on sustainable farming practices without the concern of sourcing daily essentials.</li>
+                <li><strong>Strengthened Community Ties:</strong> Collective participation in the program fosters unity and shared responsibility among members.</li>
+            </ul>
+
+            <h3>Eligibility</h3>
+            <p>All active members of Palm Eco Alliance, especially those in remote locations with limited access to retail stores, are eligible to participate in the Community Essentials Support Program.</p>
+
+            <h3>How to Participate</h3>
+            <p>Interested members can enroll in the program by contacting their regional coordinator or by filling out the enrollment form available on our website.</p>
+
+            <p>Palm Eco Alliance is dedicated to empowering our members and their communities. Through the Community Essentials Support Program, we aim to ensure that all members have the necessary resources to thrive both in their personal lives and in their sustainable farming endeavors.</p>
+
+            <p><strong>Note:</strong> This program is an exclusive benefit for Palm Eco Alliance members. To become a member, please visit our <a href="membership.html">membership page</a> for more details.</p>
+
+            <a href="join.html" class="cta-button">Join Palm Eco Alliance</a>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Palm Eco Alliance. All rights reserved.</p>
+    </footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const menuButton = document.querySelector('.menu-button');
+        const dropdown = document.querySelector('.dropdown');
+
+        if (menuButton && dropdown) {
+            menuButton.addEventListener('click', (event) => {
+                event.stopPropagation();
+                dropdown.classList.toggle('active');
+            });
+
+            document.addEventListener('click', (event) => {
+                if (!dropdown.contains(event.target) && !menuButton.contains(event.target)) {
+                    dropdown.classList.remove('active');
+                }
+            });
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape') {
+                    dropdown.classList.remove('active');
+                }
+            });
+        }
+    });
+</script>
+</body>
+</html>
