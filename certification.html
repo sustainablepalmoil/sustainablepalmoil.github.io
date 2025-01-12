@@ -26,7 +26,7 @@
             color: var(--light-text);
             font-size: 16px;
             margin: 20px 0;
-            border: 2px solid var(--primary-green);
+            /* border: 2px solid var(--primary-green); */
         }
 
         .form-step {
@@ -65,55 +65,64 @@
 
     <div class="container">
         <div class="main-container">
-            <h2>About EcoSawit+</h2>
-            <p>The EcoSawit+ Certification represents the gold standard in sustainable palm oil production. It aligns with global benchmarks, such as the EU Deforestation Regulation (EUDR), empowering Indonesian farmers while ensuring the highest levels of environmental stewardship and traceability.</p>
+            <section>
+                <h2>About EcoSawit+</h2>
+                <p>The EcoSawit+ Certification represents the gold standard in sustainable palm oil production. It aligns with global benchmarks, such as the EU Deforestation Regulation (EUDR), empowering Indonesian farmers while ensuring the highest levels of environmental stewardship and traceability.</p>
 
-            <h3>Key Benefits</h3>
-            <div class="certification-features">
-                <div class="feature-box">
-                    <h4>Global Compliance</h4>
-                    <p>Meets stringent international sustainability standards.</p>
+                <h3>Key Benefits</h3>
+                <div class="certification-features">
+                    <div class="feature-box">
+                        <h4>Global Compliance</h4>
+                        <p>Meets stringent international sustainability standards.</p>
+                    </div>
+                    
+                    <div class="feature-box">
+                        <h4>Enhanced Transparency</h4>
+                        <p>Leverages blockchain and satellite monitoring for full traceability.</p>
+                    </div>
+                    
+                    <div class="feature-box">
+                        <h4>Farmer Empowerment</h4>
+                        <p>Provides training, resources, and incentives for sustainable practices.</p>
+                    </div>
+                    
+                    <div class="feature-box">
+                        <h4>Eco-Restoration</h4>
+                        <p>Focuses on biodiversity improvement and carbon sequestration.</p>
+                    </div>
                 </div>
-                
-                <div class="feature-box">
-                    <h4>Enhanced Transparency</h4>
-                    <p>Leverages blockchain and satellite monitoring for full traceability.</p>
-                </div>
-                
-                <div class="feature-box">
-                    <h4>Farmer Empowerment</h4>
-                    <p>Provides training, resources, and incentives for sustainable practices.</p>
-                </div>
-                
-                <div class="feature-box">
-                    <h4>Eco-Restoration</h4>
-                    <p>Focuses on biodiversity improvement and carbon sequestration.</p>
-                </div>
-            </div>
 
-            <h3>Guidance Brochure</h3>
-            <a href="ecosawit-plus-guidance.pdf">
-                <img src="guidance-brochure-thumbnail.png" alt="EcoSawit+ Guidance Brochure" style="display: block; width: 262.5px; margin: 20px auto; box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.3);">
-            </a>
-
-            <h3>Certification Process</h3>
-            <div class="flowchart">
-                <div class="node">1. Pre-Application Phase<br><span class="form-step">Farmers fill out Form I (Basic Information) and Form II (Eligibility Checklist).</span><br><strong>Authority:</strong> EcoSawit+ Registration Desk</div>
-                <div class="arrow">↓</div>
-                <div class="node">2. On-the-Ground GIS Assessment<br><span class="form-step">EcoSawit+ Field Officer collects and verifies land data.</span><br><strong>Authority:</strong> EcoSawit+ Field Team</div>
-                <div class="arrow">↓</div>
-                <div class="node">3. Satellite Verification<br><span class="form-step">Cross-check submitted data with satellite imagery.</span><br><strong>Authority:</strong> EcoSawit+ Compliance Team</div>
-                <div class="arrow">↓</div>
-                <div class="node">4. Audit and Reporting<br><span class="form-step">Farmers receive the audit report with recommendations.</span><br><strong>Authority:</strong> EcoSawit+ Auditors</div>
-                <div class="arrow">↓</div>
-                <div class="highlighted-node">
-                    5. EcoSawit+ Certificate Granted subject to Independent Board Approval
+                <h3>Guidance Brochure</h3>
+                <div class="brochure-container">
+                    <a href="ecosawit-plus-guidance.pdf" class="brochure-link">
+                        <img src="guidance-brochure-thumbnail.png" alt="EcoSawit+ Guidance Brochure" class="brochure-thumbnail">
+                        <div class="brochure-info">
+                            <h4>EcoSawit+ Guidance Document</h4>
+                            <p>Download our comprehensive guide to certification requirements and processes</p>
+                            <span class="download-hint">Click to download PDF</span>
+                        </div>
+                    </a>
                 </div>
-                <div class="arrow">↓</div>
-                <div class="node">6. Market Access<br><span class="form-step">Farmers use EcoSawit+ Label and connect with buyers.</span><br><strong>Authority:</strong> EcoSawit+ Marketing Team</div>
-                <div class="arrow">↓</div>
-                <div class="node">7. Continuous Monitoring<br><span class="form-step">Annual updates and reassessments every two years.</span><br><strong>Authority:</strong> EcoSawit+ Monitoring Unit</div>
-            </div>
+
+                <h3>Certification Process</h3>
+                <div class="flowchart">
+                    <div class="node">1. Pre-Application Phase<br><span class="form-step">Farmers fill out Form I (Basic Information) and Form II (Eligibility Checklist).</span><br><strong>Authority:</strong> EcoSawit+ Registration Desk</div>
+                    <div class="arrow">↓</div>
+                    <div class="node">2. On-the-Ground GIS Assessment<br><span class="form-step">EcoSawit+ Field Officer collects and verifies land data.</span><br><strong>Authority:</strong> EcoSawit+ Field Team</div>
+                    <div class="arrow">↓</div>
+                    <div class="node">3. Satellite Verification<br><span class="form-step">Cross-check submitted data with satellite imagery.</span><br><strong>Authority:</strong> EcoSawit+ Compliance Team</div>
+                    <div class="arrow">↓</div>
+                    <div class="node">4. Audit and Reporting<br><span class="form-step">Farmers receive the audit report with recommendations.</span><br><strong>Authority:</strong> EcoSawit+ Auditors</div>
+                    <div class="arrow">↓</div>
+                    <div class="highlighted-node">
+                        5. EcoSawit+ Certificate Granted subject to Independent Board Approval
+                    </div>
+                    <div class="arrow">↓</div>
+                    <div class="node">6. Market Access<br><span class="form-step">Farmers use EcoSawit+ Label and connect with buyers.</span><br><strong>Authority:</strong> EcoSawit+ Marketing Team</div>
+                    <div class="arrow">↓</div>
+                    <div class="node">7. Continuous Monitoring<br><span class="form-step">Annual updates and reassessments every two years.</span><br><strong>Authority:</strong> EcoSawit+ Monitoring Unit</div>
+                </div>
+            </section>
         </div>
     </div>
 

@@ -1,5 +1,5 @@
 /* Add font imports at the top */
-@import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;600;700&display=swap');
 
 /* Add color variables at the top */
 :root {
@@ -9,7 +9,7 @@
     --light-cream: #F5F2E9;
     --dark-text: #2C2C2C;
     --light-text: #FFFFFF;
-    --system-font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --system-font: "Noto Serif", Georgia, serif;
 }
 
 /* General styling for body and html */
@@ -21,7 +21,6 @@ html, body {
   font-family: var(--system-font);
   background: url('index-background.png') no-repeat center center fixed;
   background-size: cover;
-  background-color: var(--light-cream);
   color: var(--dark-text);
   text-align: left;
 }
@@ -35,7 +34,6 @@ body {
   font-family: var(--system-font);
   background: url('index-background.png') no-repeat center center fixed;
   background-size: cover;
-  background-color: var(--light-cream);
   color: var(--dark-text);
   text-align: left;
   position: relative;
@@ -59,7 +57,7 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #ffffff;
+  background-color: transparent;
   box-sizing: border-box;
 }
 
@@ -245,10 +243,11 @@ section {
   flex: 1;
   width: 100%;
   margin: 20px auto;
-  padding: 20px;
+  padding: 30px;
   background-color: var(--light-text);
-  border-radius: 5px;
+  border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
 }
 
 /* Call-to-action button styling */
@@ -358,8 +357,8 @@ section {
   }
   
   section {
-    padding: 15px;
-    margin: 8px;
+    padding: 20px;
+    margin: 15px auto;
   }
 }
 
@@ -392,7 +391,7 @@ section {
   }
 
   .cta-button {
-    width: 90%;
+    width: 80%;
     margin: 10px auto;
     padding: 12px 20px;
   }
@@ -425,15 +424,26 @@ section {
   }
 
   section {
-    padding: 12px;
-    margin: 6px;
+    padding: 15px;
+    margin: 10px auto;
+    border-radius: 0;
+  }
+
+  .feature-box {
+    min-height: auto;
+    padding: 20px;
+  }
+
+  .mission-container {
+    margin: 10px 0;
+    padding: 20px;
   }
 }
 
 @media (max-width: 480px) {
   /* Small mobile adjustments */
   .main-container {
-    width: 98%;
+    width: 100%;
     padding: 10px;
   }
 
@@ -467,8 +477,11 @@ section {
   }
 
   section {
-    padding: 10px;
-    margin: 5px;
+    padding: 12px;
+  }
+
+  .feature-box {
+    padding: 15px;
   }
 }
 
@@ -540,21 +553,21 @@ strong {
 }
 
 .highlighted-node {
-    border-radius: 5px;
-    padding: 20px;
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--accent-gold);
-    color: var(--light-text);
-    font-size: 16px;
-    text-align: center;
-    margin: 20px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border: 2px solid var(--accent-gold);
+  border-radius: 5px;
+  padding: 20px;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--accent-gold);
+  color: var(--light-text);
+  font-size: 16px;
+  text-align: center;
+  margin: 20px 0;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+
 }
 
 /* Form elements */
@@ -616,7 +629,7 @@ form label {
 
 .feature-box {
     flex: 1;
-    background-color: var(--light-cream);
+    background-color: rgba(245, 242, 233, 0.7);  /* Semi-transparent light cream */
     padding: 25px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -832,5 +845,110 @@ form label {
         width: 100%;
         max-width: 500px;
         margin: 20px auto;
+    }
+}
+
+/* Update container styling for certification page */
+.main-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: transparent;
+    box-sizing: border-box;
+}
+
+section {
+    flex: 1;
+    width: 100%;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: var(--light-text);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .main-container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    section {
+        padding: 15px;
+        margin: 10px auto;
+        border-radius: 0;
+    }
+}
+
+/* Brochure styling */
+.brochure-container {
+    background-color: rgba(245, 242, 233, 0.7);  /* Semi-transparent light cream */
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.brochure-link {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    text-decoration: none;
+    color: var(--dark-text);
+    transition: transform 0.3s ease;
+}
+
+.brochure-link:hover {
+    transform: translateY(-2px);
+}
+
+.brochure-thumbnail {
+    width: 200px;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.brochure-info {
+    flex: 1;
+}
+
+.brochure-info h4 {
+    color: var(--primary-green);
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.brochure-info p {
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.download-hint {
+    color: var(--secondary-green);
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .brochure-link {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .brochure-thumbnail {
+        width: 180px;
+    }
+
+    .brochure-info {
+        text-align: center;
     }
 }
