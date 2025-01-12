@@ -258,7 +258,7 @@ section {
 /* Call-to-action button styling */
 .cta-button {
   background-color: var(--accent-gold);
-  color: var(--dark-text);
+  color: var(--light-text);
   padding: 15px 30px;
   text-decoration: none;
   font-weight: bold;
@@ -269,13 +269,16 @@ section {
   text-align: center;
   box-sizing: border-box;
   border: 1px solid var(--accent-gold);
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .cta-button:hover {
   background-color: var(--light-cream);
   color: var(--accent-gold);
   border-color: var(--accent-gold);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
 }
 
 /* Hero section styling */
