@@ -30,8 +30,15 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: var(--system-font);
+  background: url('index-background.png') no-repeat center center fixed;
+  background-size: cover;
+  background-color: var(--light-cream);
+  color: var(--dark-text);
+  text-align: left;
   position: relative;
-  background-attachment: fixed;
 }
 
 /* Container styling */
@@ -54,6 +61,7 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
+  min-height: calc(100vh - 140px);
 }
 
 /* Content wrapper to maintain full opacity */
@@ -93,11 +101,11 @@ header {
 footer {
   width: 100%;
   background-color: var(--primary-green);
-  color: var(--light-text);
+  color: var(--accent-gold);
   padding: 10px 20px;
   text-align: center;
   box-sizing: border-box;
-  flex-shrink: 0;
+  margin-top: auto;
 }
 
 /* Footer content container */
@@ -644,11 +652,16 @@ form label {
 
 /* Certification features specific styling */
 .certification-features {
-    gap: 15px; /* Slightly smaller gap for 4 columns */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 15px;
+    margin: 20px 0;
 }
 
 .certification-features .feature-box {
-    min-height: 180px; /* Slightly smaller height for 4 columns */
+    flex: 1;
+    min-height: 150px;
     padding: 20px;
 }
 
@@ -661,22 +674,20 @@ form label {
     font-size: 0.9em;
 }
 
-/* Update responsive design for 4 columns */
+/* Update responsive design for smaller screens */
 @media (max-width: 1024px) {
     .certification-features {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
+        flex-wrap: wrap;
+    }
+    
+    .certification-features .feature-box {
+        flex-basis: calc(50% - 15px);
     }
 }
 
 @media (max-width: 768px) {
-    .certification-features {
-        grid-template-columns: 1fr;
-    }
-    
     .certification-features .feature-box {
-        min-height: auto;
+        flex-basis: 100%;
     }
 }
 
