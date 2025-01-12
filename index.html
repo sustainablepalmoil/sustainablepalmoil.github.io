@@ -50,6 +50,59 @@
         <p class="animate-text delay-1"><strong>Empower Your Farm. Trade Sustainably. Secure Your Future.</strong></p>
         <p class="animate-text delay-2">As a member of the Palm Eco Alliance you comply with the EU Deforestation Regulation (EUDR), access global markets, and achieve better prices for your sustainably produced palm oil.</p>
         <a href="join.html" class="cta-button animate-text delay-3">Become a Member Now</a>
+        
+        <!-- Move carousel inside content-wrapper -->
+        <div class="carousel-container animate-text delay-3">
+            <div class="carousel-track">
+                <div class="carousel-card">
+                    <div class="card-image-container">
+                        <img src="small-palm-eco.png" alt="Palm Eco Alliance" class="card-image">
+                    </div>
+                    <h3>Find out about Palm Eco Alliance</h3>
+                    <p>and how to benefit from the EUDR?</p>
+                    <a href="about.html" class="card-link">Learn More →</a>
+                </div>
+                
+                <div class="carousel-card">
+                    <div class="card-image-container">
+                        <img src="cert-pic.png" alt="EcoSawit+ Certification" class="card-image">
+                    </div>
+                    <h3>Stand out with EcoSawit+ Certification</h3>
+                    <p>Get certified for global markets</p>
+                    <a href="certification.html" class="card-link">Learn More →</a>
+                </div>
+                
+                <div class="carousel-card">
+                    <div class="card-image-container">
+                        <img src="membership-pic.png" alt="Palm Eco Alliance Membership" class="card-image">
+                    </div>
+                    <h3>What is Palm Eco Alliance Membership?</h3>
+                    <p>Discover the benefits</p>
+                    <a href="membership.html" class="card-link">Learn More →</a>
+                </div>
+                
+                <div class="carousel-card">
+                    <div class="card-image-container">
+                        <img src="community-pic.png" alt="Community Essentials Support Programme" class="card-image">
+                    </div>
+                    <h3>Community Essentials Support Programme</h3>
+                    <p>Supporting local communities</p>
+                    <a href="community-essentials.html" class="card-link">Learn More →</a>
+                </div>
+                
+                <div class="carousel-card">
+                    <div class="card-image-container">
+                        <img src="programmes-pic.png" alt="Palm Eco Alliance Programmes" class="card-image">
+                    </div>
+                    <h3>Palm Eco Alliance Programmes</h3>
+                    <p>Explore our initiatives</p>
+                    <a href="programmes.html" class="card-link">Learn More →</a>
+                </div>
+            </div>
+            
+            <button class="carousel-button prev">←</button>
+            <button class="carousel-button next">→</button>
+        </div>
     </div>
 </section>
 
@@ -99,6 +152,113 @@
             }
         };
     };
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const track = document.querySelector('.carousel-track');
+        const cards = document.querySelectorAll('.carousel-card');
+        const prevButton = document.querySelector('.carousel-button.prev');
+        const nextButton = document.querySelector('.carousel-button.next');
+        
+        // Clone first and last cards for infinite scroll effect
+        const firstCardClone = cards[0].cloneNode(true);
+        const lastCardClone = cards[cards.length - 1].cloneNode(true);
+        track.appendChild(firstCardClone);
+        track.insertBefore(lastCardClone, cards[0]);
+        
+        let currentIndex = 1;  // Start at 1 to account for cloned card
+        const cardWidth = 270; // card width + gap
+        const totalCards = cards.length;
+        let autoScrollInterval;
+        
+        // Initial position
+        track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+        
+        function updateCarousel(smooth = true) {
+            if (!smooth) {
+                track.style.transition = 'none';
+            }
+            track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+            if (!smooth) {
+                setTimeout(() => {
+                    track.style.transition = 'transform 0.5s ease';
+                }, 10);
+            }
+        }
+        
+        function nextSlide() {
+            if (currentIndex >= totalCards + 1) {
+                // Jump back to start without animation
+                currentIndex = 1;
+                updateCarousel(false);
+                // Move to second slide with animation
+                setTimeout(() => {
+                    currentIndex++;
+                    updateCarousel();
+                }, 20);
+            } else {
+                currentIndex++;
+                updateCarousel();
+            }
+        }
+        
+        function prevSlide() {
+            if (currentIndex <= 0) {
+                // Jump to end without animation
+                currentIndex = totalCards;
+                updateCarousel(false);
+                // Move to second-to-last slide with animation
+                setTimeout(() => {
+                    currentIndex--;
+                    updateCarousel();
+                }, 20);
+            } else {
+                currentIndex--;
+                updateCarousel();
+            }
+        }
+        
+        // Start auto-scrolling
+        function startAutoScroll() {
+            autoScrollInterval = setInterval(nextSlide, 3000);
+        }
+        
+        // Stop auto-scrolling
+        function stopAutoScroll() {
+            clearInterval(autoScrollInterval);
+        }
+        
+        // Initialize auto-scroll
+        startAutoScroll();
+        
+        // Pause on hover
+        track.addEventListener('mouseenter', stopAutoScroll);
+        track.addEventListener('mouseleave', startAutoScroll);
+        
+        // Handle manual navigation
+        prevButton.addEventListener('click', () => {
+            stopAutoScroll();
+            prevSlide();
+        });
+        
+        nextButton.addEventListener('click', () => {
+            stopAutoScroll();
+            nextSlide();
+        });
+        
+        // Handle transition end
+        track.addEventListener('transitionend', () => {
+            if (currentIndex >= totalCards + 1) {
+                currentIndex = 1;
+                updateCarousel(false);
+            }
+            if (currentIndex <= 0) {
+                currentIndex = totalCards;
+                updateCarousel(false);
+            }
+        });
+    });
 </script>
 </body>
 </html>
