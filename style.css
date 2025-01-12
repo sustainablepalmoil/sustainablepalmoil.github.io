@@ -1027,6 +1027,10 @@ section {
     cursor: pointer;
     opacity: 0.8;
     transition: opacity 0.3s ease;
+    font-size: 20px;  /* Adjust size of arrow */
+    font-weight: bold;  /* Make arrow bolder */
+    line-height: 1;  /* Center the arrow vertically */
+    padding: 0;  /* Remove padding */
 }
 
 .carousel-button:hover {
