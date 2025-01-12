@@ -17,7 +17,6 @@
 
         section {
             padding: 20px;
-            text-align: center;
             background-color: #f9f9f9;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -25,17 +24,15 @@
         }
 
         h2 {
-            color: #228B22; /* Forest green color */
+            color: var(--primary-green); /* Update from #228B22 */
         }
 
         p {
-            text-align: justify;
             font-size: 1.1em;
             line-height: 1.6;
         }
 
         ul {
-            text-align: justify;
             margin: 10px 20px;
         }
     </style>
@@ -76,23 +73,51 @@
             <p>At <strong>Palm Eco Alliance</strong>, we are redefining the future of palm oil production by empowering Indonesian farmers to achieve prosperity through sustainability. As a leader in the industry, we are committed to creating lasting value for farmers, the environment, and the global palm oil market.</p>
             
             <h3>Our Mission</h3>
-            <p>Our mission is to ensure the Indonesian palm oil industry complies with the <strong>EU Deforestation Regulation (EUDR)</strong>, enabling farmers and plantations to maintain access to the EU market while securing better prices for sustainably produced palm oil.</p>
+            <div class="mission-container">
+                <p>Our mission is to ensure the Indonesian palm oil industry complies with the <strong>EU Deforestation Regulation (EUDR)</strong>, enabling farmers and plantations to maintain access to the EU market while securing better prices for sustainably produced palm oil.</p>
+            </div>
 
             <h3>What We Do</h3>
-            <ul>
-                <li><strong>Empowering Farmers:</strong> We partner with farmers to improve yields, optimise practices, and enhance profitability through tailored training and financial incentives.</li>
-                <li><strong>Leading with Innovation:</strong> Using advanced Geographic Information System (GIS) technology, satellite monitoring, and blockchain-based traceability, we ensure unmatched transparency and accountability.</li>
-                <li><strong>Building Sustainable Futures:</strong> Promoting regenerative agricultural practices, protecting biodiversity, and enabling deforestation-free production for a sustainable supply chain.</li>
-            </ul>
+            <div class="features-container">
+                <div class="feature-box">
+                    <h4>Empowering Farmers</h4>
+                    <p>We partner with farmers to improve yields, optimise practices, and enhance profitability through tailored training and financial incentives.</p>
+                </div>
+                
+                <div class="feature-box">
+                    <h4>Leading with Innovation</h4>
+                    <p>Using advanced Geographic Information System (GIS) technology, satellite monitoring, and blockchain-based traceability, we ensure unmatched transparency and accountability.</p>
+                </div>
+                
+                <div class="feature-box">
+                    <h4>Building Sustainable Futures</h4>
+                    <p>Promoting regenerative agricultural practices, protecting biodiversity, and enabling deforestation-free production for a sustainable supply chain.</p>
+                </div>
+            </div>
 
             <h3>Our Certification: Setting New Standards</h3>
             <p>The <strong>EcoSawit+ Certification</strong> sets a new benchmark for sustainable palm oil. Using advanced monitoring systems, it ensures:</p>
-            <ul>
-                <li>Full compliance with the EU Deforestation Regulation (EUDR).</li>
-                <li>Traceability of palm oil from farm to market, using GIS assessment and satellite technology.</li>
-                <li>Responsible land management that protects biodiversity and promotes environmental stewardship.</li>
-                <li>Ensures access to premium markets that value sustainability and traceability.</li>
-            </ul>
+            <div class="features-container certification-features">
+                <div class="feature-box">
+                    <h4>EUDR Compliance</h4>
+                    <p>Full compliance with the EU Deforestation Regulation (EUDR).</p>
+                </div>
+                
+                <div class="feature-box">
+                    <h4>Full Traceability</h4>
+                    <p>Traceability of palm oil from farm to market, using GIS assessment and satellite technology.</p>
+                </div>
+                
+                <div class="feature-box">
+                    <h4>Environmental Stewardship</h4>
+                    <p>Responsible land management that protects biodiversity and promotes environmental stewardship.</p>
+                </div>
+                
+                <div class="feature-box">
+                    <h4>Market Access</h4>
+                    <p>Ensures access to premium markets that value sustainability and traceability.</p>
+                </div>
+            </div>
 
             <img src="https://sustainablepalmoil.github.io/palm-eco-green.png" 
                  alt="PalmEcoCoop Banner" 
@@ -101,7 +126,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2024 Palm Eco Alliance. All rights reserved.</p>
+        <p>&copy; 2025 Palm Eco Alliance. All rights reserved.</p>
     </footer>
 
 <script>

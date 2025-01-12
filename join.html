@@ -34,15 +34,30 @@
         }
 
         form button {
-            background-color: #00BF63;
-            color: white;
+            background-color: var(--primary-green);
+            color: var(--light-text);
             font-size: 1em;
             cursor: pointer;
-            border: none;
+            border: 1px solid var(--accent-gold);
         }
 
         form button:hover {
-            background-color: #01A254;
+            background-color: var(--secondary-green);
+        }
+
+        .form-container {
+            /* Keep other styles */
+            /* remove text-align: center; */
+        }
+        
+        .form-group {
+            /* Keep other styles */
+            /* remove text-align: center; */
+        }
+
+        form input,
+        form select {
+            border: 1px solid var(--secondary-green);
         }
     </style>
 </head>
@@ -137,7 +152,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2024 Palm Eco Alliance. All rights reserved.</p>
+        <p>&copy; 2025 Palm Eco Alliance. All rights reserved.</p>
     </footer>
 
 <script>
