@@ -721,3 +721,116 @@ form label {
         font-size: 1.1em;
     }
 }
+
+/* Remove old video hero styles */
+#video-hero {
+    display: none;
+}
+
+/* New video container styles */
+#video-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.video-wrapper {
+    width: 100%;
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.video-wrapper video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #video-container {
+        max-width: 100%;
+        padding: 0 15px;
+    }
+}
+
+/* Text animation styles */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-text {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.delay-1 {
+    animation-delay: 0.3s;
+}
+
+.delay-2 {
+    animation-delay: 0.6s;
+}
+
+.delay-3 {
+    animation-delay: 0.9s;
+}
+
+/* Update hero content styling to work with animations */
+#hero-content {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#hero-content h1, 
+#hero-content p, 
+#hero-content .cta-button {
+    transform: translateY(0);  /* Ensure smooth animation */
+    will-change: transform, opacity;  /* Optimize animation performance */
+}
+
+/* Add flex container for content alignment */
+.content-flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.text-content {
+    flex: 1;
+    max-width: 600px;
+}
+
+/* Update responsive design */
+@media (max-width: 1024px) {
+    .content-flex-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    #video-container {
+        width: 100%;
+        max-width: 500px;
+        margin: 20px auto;
+    }
+}
