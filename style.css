@@ -964,7 +964,7 @@ section {
     position: relative;
     max-width: 1200px;
     margin: 40px auto 0;
-    padding: 0;
+    padding: 0 40px;  /* Add padding for buttons */
     overflow: hidden;
 }
 
@@ -973,14 +973,14 @@ section {
     gap: 20px;
     transition: transform 0.5s ease;
     padding: 10px 0;
-    will-change: transform;
-    transform-style: preserve-3d;
-    cursor: pointer;
+    margin-left: -20px;  /* Offset for first card */
 }
 
 .carousel-card {
     flex: 0 0 250px;
-    height: 350px;  /* Increased height to fit image */
+    width: 250px;  /* Fixed width */
+    margin: 0;
+    transform: translateZ(0);  /* Hardware acceleration */
     background-color: var(--light-text);
     border-radius: 12px;
     padding: 20px;
@@ -1682,4 +1682,319 @@ html {
 /* Optimize spacing for mobile */
 .main-container {
     padding: 10px;
+}
+
+/* Intro container styling */
+.intro-container {
+    background-color: var(--primary-green);
+    border-radius: 12px;
+    padding: 25px;
+    margin: 20px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.intro-icon {
+    font-size: 2.5em;
+    background-color: var(--accent-gold);
+    color: var(--light-text);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.intro-container p {
+    color: var(--light-text);
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin: 0;
+    flex: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .intro-container {
+        padding: 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .intro-icon {
+        margin-bottom: 15px;
+    }
+
+    .intro-container p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .intro-container {
+        padding: 15px;
+    }
+
+    .intro-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 2em;
+    }
+}
+
+/* Update carousel track styling */
+.carousel-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease;
+    padding: 10px 0;
+    margin-left: -20px;  /* Offset for first card */
+}
+
+/* Update carousel container */
+.carousel-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 40px auto 0;
+    padding: 0 40px;  /* Add padding for buttons */
+    overflow: hidden;
+}
+
+/* Ensure cards maintain consistent width */
+.carousel-card {
+    flex: 0 0 250px;
+    width: 250px;  /* Fixed width */
+    margin: 0;
+    transform: translateZ(0);  /* Hardware acceleration */
+}
+
+/* Scroll to top button styling */
+.scroll-top-btn {
+    display: none;  /* Hidden by default */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--accent-gold);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    transition: all 0.3s ease;
+    padding: 8px;
+}
+
+.scroll-top-btn svg {
+    fill: var(--light-text);
+    width: 100%;
+    height: 100%;
+}
+
+.scroll-top-btn:hover {
+    background-color: var(--primary-green);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Only show on mobile and tablet */
+@media (min-width: 1025px) {
+    .scroll-top-btn {
+        display: none !important;
+    }
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Certification CTA section styling */
+.certification-cta {
+    text-align: center;
+    background-color: var(--light-cream);
+    padding: 30px;
+    border-radius: 12px;
+    margin: 40px 0 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.certification-cta h3 {
+    color: var(--primary-green);
+    margin-bottom: 15px;
+}
+
+.certification-cta p {
+    color: var(--dark-text);
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+.certification-cta .cta-button {
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .certification-cta {
+        padding: 20px;
+        margin: 30px 0 15px;
+    }
+
+    .certification-cta p {
+        font-size: 1em;
+    }
+}
+
+/* Contact page styling */
+.contact-grid {
+    display: block;
+    margin-top: 30px;
+}
+
+.contact-form-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--light-cream);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    color: var(--dark-text);
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    font-family: var(--system-font);
+    font-size: 1em;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 0.9em;
+    color: var(--dark-text);
+}
+
+.submit-button {
+    background-color: var(--accent-gold);
+    color: var(--light-text);
+    padding: 15px 30px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: var(--primary-green);
+    transform: translateY(-2px);
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-card {
+    background-color: var(--light-text);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.info-icon {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.info-card h3 {
+    color: var(--primary-green);
+    margin-bottom: 10px;
+}
+
+/* Modal styling */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    position: relative;
+    background-color: var(--light-text);
+    margin: 15% auto;
+    padding: 30px;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.success-icon {
+    font-size: 3em;
+    color: var(--accent-gold);
+    margin-bottom: 20px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form-container {
+        padding: 20px;
+    }
+
+    .info-card {
+        padding: 15px;
+    }
 }

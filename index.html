@@ -13,6 +13,16 @@
             height: auto;
         }
     </style>
+    <!-- Add performance meta tags -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Preload critical CSS -->
+    <link rel="preload" href="style.css" as="style">
+    
+    <!-- Defer non-critical CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
 </head>
 <body>
 
@@ -39,6 +49,7 @@
                 <a href="membership.html">Membership Benefits</a>
                 <a href="programmes.html">Our Programmes</a>
                 <a href="join.html">Join Us</a>
+                <a href="contact.html">Contact Us</a>
             </div>
         </div>
     </div>
@@ -54,49 +65,44 @@
         <!-- Move carousel inside content-wrapper -->
         <div class="carousel-container animate-text delay-3">
             <div class="carousel-track">
-                <div class="carousel-card">
+                <div class="carousel-card clickable" onclick="window.location.href='about.html'">
                     <div class="card-image-container">
-                        <img src="small-palm-eco.png" alt="Palm Eco Alliance" class="card-image">
+                        <img src="small-palm-eco.png" alt="Palm Eco Alliance" class="card-image" loading="lazy">
                     </div>
                     <h3>Find out about Palm Eco Alliance</h3>
                     <p>and how to benefit from the EUDR?</p>
-                    <a href="about.html" class="card-link">Learn More →</a>
                 </div>
                 
-                <div class="carousel-card">
+                <div class="carousel-card clickable" onclick="window.location.href='certification.html'">
                     <div class="card-image-container">
-                        <img src="cert-pic.png" alt="EcoSawit+ Certification" class="card-image">
+                        <img src="cert-pic.png" alt="EcoSawit+ Certification" class="card-image" loading="lazy">
                     </div>
-                    <h3>Stand out with EcoSawit+ Certification</h3>
-                    <p>Get certified for global markets</p>
-                    <a href="certification.html" class="card-link">Learn More →</a>
+                    <h3>EcoSawit+ Certification</h3>
+                    <p>Our gold standard in sustainable palm oil</p>
                 </div>
                 
-                <div class="carousel-card">
+                <div class="carousel-card clickable" onclick="window.location.href='membership.html'">
                     <div class="card-image-container">
-                        <img src="membership-pic.png" alt="Palm Eco Alliance Membership" class="card-image">
+                        <img src="membership-pic.png" alt="Membership Benefits" class="card-image" loading="lazy">
                     </div>
-                    <h3>What is Palm Eco Alliance Membership?</h3>
-                    <p>Discover the benefits</p>
-                    <a href="membership.html" class="card-link">Learn More →</a>
+                    <h3>Membership Benefits</h3>
+                    <p>Exclusive access to premium markets</p>
                 </div>
                 
-                <div class="carousel-card">
+                <div class="carousel-card clickable" onclick="window.location.href='community-essentials.html'">
                     <div class="card-image-container">
-                        <img src="community-pic.png" alt="Community Essentials Support Programme" class="card-image">
+                        <img src="community-pic.png" alt="Community Essentials Support" class="card-image" loading="lazy">
                     </div>
-                    <h3>Community Essentials Support Programme</h3>
+                    <h3>Community Essentials Support</h3>
                     <p>Supporting local communities</p>
-                    <a href="community-essentials.html" class="card-link">Learn More →</a>
                 </div>
                 
-                <div class="carousel-card">
+                <div class="carousel-card clickable" onclick="window.location.href='programmes.html'">
                     <div class="card-image-container">
-                        <img src="programmes-pic.png" alt="Palm Eco Alliance Programmes" class="card-image">
+                        <img src="programmes-pic.png" alt="Palm Eco Alliance Programmes" class="card-image" loading="lazy">
                     </div>
                     <h3>Palm Eco Alliance Programmes</h3>
                     <p>Explore our initiatives</p>
-                    <a href="programmes.html" class="card-link">Learn More →</a>
                 </div>
             </div>
             
@@ -161,104 +167,121 @@
         const prevButton = document.querySelector('.carousel-button.prev');
         const nextButton = document.querySelector('.carousel-button.next');
         
-        // Clone first and last cards for infinite scroll effect
-        const firstCardClone = cards[0].cloneNode(true);
-        const lastCardClone = cards[cards.length - 1].cloneNode(true);
-        track.appendChild(firstCardClone);
-        track.insertBefore(lastCardClone, cards[0]);
+        // Clone multiple cards at both ends to ensure smooth looping
+        const firstCards = Array.from(cards).slice(0, 3).map(card => card.cloneNode(true));
+        const lastCards = Array.from(cards).slice(-3).map(card => card.cloneNode(true));
         
-        let currentIndex = 1;  // Start at 1 to account for cloned card
-        const cardWidth = 270; // card width + gap
+        // Add cloned cards to both ends
+        lastCards.forEach(card => track.insertBefore(card, cards[0]));
+        firstCards.forEach(card => track.appendChild(card));
+        
+        let currentIndex = 3;  // Start at index 3 (after the cloned cards)
+        const cardWidth = cards[0].offsetWidth + 20; // card width + gap
         const totalCards = cards.length;
-        let autoScrollInterval;
         
         // Initial position
         track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
         
+        const TRANSITION_TIME = 1000;
+        
         function updateCarousel(smooth = true) {
             if (!smooth) {
                 track.style.transition = 'none';
+            } else {
+                track.style.transition = `transform ${TRANSITION_TIME}ms ease`;
             }
             track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-            if (!smooth) {
-                setTimeout(() => {
-                    track.style.transition = 'transform 0.5s ease';
-                }, 10);
-            }
         }
         
         function nextSlide() {
-            if (currentIndex >= totalCards + 1) {
-                // Jump back to start without animation
-                currentIndex = 1;
-                updateCarousel(false);
-                // Move to second slide with animation
+            currentIndex++;
+            updateCarousel();
+            
+            if (currentIndex >= totalCards + 3) {
                 setTimeout(() => {
-                    currentIndex++;
-                    updateCarousel();
-                }, 20);
-            } else {
-                currentIndex++;
-                updateCarousel();
+                    currentIndex = 3;
+                    updateCarousel(false);
+                }, TRANSITION_TIME);
             }
         }
         
         function prevSlide() {
-            if (currentIndex <= 0) {
-                // Jump to end without animation
-                currentIndex = totalCards;
-                updateCarousel(false);
-                // Move to second-to-last slide with animation
+            currentIndex--;
+            updateCarousel();
+            
+            if (currentIndex <= 2) {
                 setTimeout(() => {
-                    currentIndex--;
-                    updateCarousel();
-                }, 20);
-            } else {
-                currentIndex--;
-                updateCarousel();
+                    currentIndex = totalCards + 2;
+                    updateCarousel(false);
+                }, TRANSITION_TIME);
             }
         }
         
-        // Start auto-scrolling
+        let autoScrollInterval;
+        let resumeTimeout;
+        const AUTOSCROLL_DELAY = 2000; // 2 second delay before resuming
+        
         function startAutoScroll() {
-            autoScrollInterval = setInterval(nextSlide, 3000);
+            autoScrollInterval = setInterval(nextSlide, 8000);
         }
         
-        // Stop auto-scrolling
         function stopAutoScroll() {
             clearInterval(autoScrollInterval);
+            // Also clear any pending resume
+            if (resumeTimeout) {
+                clearTimeout(resumeTimeout);
+            }
         }
         
-        // Initialize auto-scroll
+        function scheduleAutoScroll() {
+            // Clear any existing timeouts
+            if (resumeTimeout) {
+                clearTimeout(resumeTimeout);
+            }
+            // Set new timeout to resume auto-scroll
+            resumeTimeout = setTimeout(() => {
+                // Only resume if not currently being hovered
+                if (!track.matches(':hover')) {
+                    startAutoScroll();
+                }
+            }, AUTOSCROLL_DELAY);
+        }
+        
+        // Start initial auto-scroll
         startAutoScroll();
         
         // Pause on hover
-        track.addEventListener('mouseenter', stopAutoScroll);
-        track.addEventListener('mouseleave', startAutoScroll);
+        track.addEventListener('mouseenter', () => {
+            stopAutoScroll();
+        });
         
-        // Handle manual navigation
+        track.addEventListener('mouseleave', () => {
+            scheduleAutoScroll();
+        });
+        
+        // Button handlers with delayed resume
         prevButton.addEventListener('click', () => {
             stopAutoScroll();
             prevSlide();
+            scheduleAutoScroll();
         });
         
         nextButton.addEventListener('click', () => {
             stopAutoScroll();
             nextSlide();
+            scheduleAutoScroll();
         });
         
-        // Handle transition end
-        track.addEventListener('transitionend', () => {
-            if (currentIndex >= totalCards + 1) {
-                currentIndex = 1;
-                updateCarousel(false);
-            }
-            if (currentIndex <= 0) {
-                currentIndex = totalCards;
-                updateCarousel(false);
-            }
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            cardWidth = cards[0].offsetWidth + 20;
+            updateCarousel(false);
         });
     });
 </script>
+
+<!-- Preload critical images -->
+<link rel="preload" as="image" href="palm-eco-logo.png">
+<link rel="preload" as="image" href="index-background.png">
 </body>
 </html>
