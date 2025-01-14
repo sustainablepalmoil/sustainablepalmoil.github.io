@@ -2090,3 +2090,103 @@ section {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
 }
+
+/* About page mobile optimizations */
+@media (max-width: 768px) {
+    /* Mission statement container */
+    .mission-container {
+        padding: 20px;
+        margin: 15px 0;
+    }
+
+    .mission-container p {
+        font-size: 1em;
+        line-height: 1.5;
+    }
+
+    /* Features grid */
+    .features-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin: 15px 0;
+    }
+
+    .feature-box {
+        padding: 15px;
+        min-height: auto;
+    }
+
+    .feature-box h4 {
+        font-size: 1.1em;
+        margin-bottom: 10px;
+    }
+
+    .feature-box p {
+        font-size: 0.9em;
+        line-height: 1.4;
+    }
+
+    /* Timeline adjustments */
+    .timeline-container {
+        padding: 15px;
+        margin: 15px 0;
+    }
+
+    .timeline-phase {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    /* Text sizing */
+    h2 {
+        font-size: 1.6em;
+        margin-bottom: 15px;
+    }
+
+    h3 {
+        font-size: 1.3em;
+        margin: 20px 0 10px;
+    }
+
+    p {
+        font-size: 0.95em;
+        line-height: 1.5;
+    }
+}
+
+/* Small mobile adjustments */
+@media (max-width: 480px) {
+    .mission-container {
+        padding: 15px;
+        margin: 10px 0;
+    }
+
+    .feature-box {
+        padding: 12px;
+    }
+
+    .timeline-container {
+        padding: 12px;
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
+
+    h3 {
+        font-size: 1.2em;
+    }
+
+    /* Improve touch targets */
+    .feature-box,
+    .timeline-phase {
+        min-height: 44px;
+    }
+
+    /* Adjust spacing */
+    section {
+        padding: 15px;
+        margin: 10px 0;
+    }
+}
