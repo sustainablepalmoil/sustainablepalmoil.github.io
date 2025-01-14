@@ -88,10 +88,10 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 90%;
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 15px;
   box-sizing: border-box;
 }
 
@@ -100,7 +100,7 @@ footer {
   width: 100%;
   background-color: var(--primary-green);
   color: var(--accent-gold);
-  padding: 10px 20px;
+  padding: 10px 0;
   text-align: center;
   box-sizing: border-box;
   margin-top: auto;
@@ -108,10 +108,9 @@ footer {
 
 /* Footer content container */
 .footer-content {
-  width: 90%;
-  max-width: 1200px;
+  width: 100%;
+  padding: 0 15px;
   margin: 0 auto;
-  padding: 0 20px;
   box-sizing: border-box;
 }
 
@@ -877,13 +876,79 @@ section {
 @media (max-width: 768px) {
     .main-container {
         width: 100%;
-        padding: 10px;
+        padding: 0;
+        margin: 0;
     }
 
     section {
+        margin: 8px 0;
         padding: 15px;
-        margin: 10px auto;
         border-radius: 0;
+        box-shadow: none;
+    }
+
+    /* Mission container adjustments */
+    .mission-container {
+        margin: 8px 0;
+        padding: 15px;
+        border-radius: 0;
+    }
+
+    /* Features container adjustments */
+    .features-container {
+        margin: 8px 0;
+        gap: 8px;
+    }
+
+    .feature-box {
+        margin: 0;
+        padding: 12px;
+        border-radius: 0;
+    }
+
+    /* Timeline adjustments */
+    .timeline-container {
+        margin: 8px 0;
+        padding: 12px;
+        border-radius: 0;
+    }
+
+    .timeline-phase {
+        margin: 8px 0;
+        padding: 12px;
+    }
+}
+
+/* Small mobile further optimizations */
+@media (max-width: 480px) {
+    .header-container {
+        padding: 0 10px;
+    }
+
+    .main-container {
+        padding: 0;
+    }
+
+    section {
+        padding: 12px;
+        margin: 5px 0;
+    }
+
+    .mission-container,
+    .feature-box,
+    .timeline-container,
+    .timeline-phase {
+        padding: 10px;
+        margin: 5px 0;
+    }
+
+    /* Adjust content spacing */
+    .feature-box h4 {
+        margin-bottom: 8px;
+    }
+
+    .feature-box p {
+        margin-bottom: 0;
     }
 }
 
