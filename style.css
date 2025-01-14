@@ -54,7 +54,7 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 87%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 10px;
@@ -853,7 +853,7 @@ form label {
     flex: 1;
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 87%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 10px;
@@ -875,29 +875,31 @@ section {
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .main-container {
-        width: 100%;
+        width: 87%;
         padding: 0;
-        margin: 0;
+        margin: 0 auto;
     }
 
     section {
         margin: 8px 0;
         padding: 15px;
-        border-radius: 0;
-        box-shadow: none;
+        border-radius: 8px;
+        width: 100%;
     }
 
     /* Mission container adjustments */
     .mission-container {
         margin: 8px 0;
         padding: 15px;
-        border-radius: 0;
+        border-radius: 8px;
+        width: 100%;
     }
 
     /* Features container adjustments */
     .features-container {
         margin: 8px 0;
         gap: 8px;
+        width: 100%;
     }
 
     .feature-box {
@@ -2137,7 +2139,7 @@ html {
     flex: 1;
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 87%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 10px;
